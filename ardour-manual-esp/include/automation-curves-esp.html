@@ -1,0 +1,32 @@
+<figure class="right">
+    <img src="/images/automation-curve1.png" />
+    <figcaption class="center">Una curva de automatización típica.</figcaption>
+</figure>
+
+<p>
+    Una <dfn>curva de automatización</dfn> es una serie de líneas conectadas por
+    <dfn>puntos de control</dfn> que típicamente definen una línea continua. A
+    medida que se recorre la curva de izquierda a derecha, la línea define el
+    nivel del parámetro controlado por la pista de automatización.
+</p>
+
+<p>
+    Existen dos tipos de curvas de automatización:
+    <kbd class="menu">Lineal</kbd> y <kbd class="menu">Discreta</kbd>. El tipo
+    más común es <kbd class="menu">Lineal</kbd>, en el que el espacio entre dos
+    puntos de control contiguos se interpola de manera continua; en otras
+    palabras, los valores entre dos puntos de control contiguos en un momento
+    dado se obtienen mediante la línea recta que los conecta. El segundo tipo de
+    curva de automatización es <kbd class="menu">Discreta</kbd>, en la que no se
+    realiza ninguna interpolación entre los puntos de control; cualquier valor
+    en el que se haya fijado el punto de control será el valor que se mantendrá
+    hasta que se alcance el siguiente punto de control, momento en el que tomará
+    ese valor hasta el siguiente punto de control, y así sucesivamente hasta que
+    no haya más puntos de control.
+</p>
+
+<p class="note">
+    La curva por sí sola no hace nada; <em>solo</em> controlará la reproducción
+    si la pista en la que reside está en modo
+    <kbd class="menu">Reproducir</kbd>.
+</p>

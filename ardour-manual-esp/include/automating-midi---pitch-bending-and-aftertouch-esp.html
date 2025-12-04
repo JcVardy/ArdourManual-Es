@@ -1,0 +1,46 @@
+<p>
+    Agregar "pitch-bend" o "aftertouch" puede añadir mucha sutileza a una región
+    midi que, de otro modo, sonaría plana y ayudaría a humanizarla.
+</p>
+
+<figure>
+    <img
+        src="/images/MIDI_pitch_bending.png"
+        alt="Automatización: pitch-bend"
+    />
+    <figcaption>Automatización: pitch-bend</figcaption>
+</figure>
+
+<p>
+    Tanto el pitch-bend como el aftertouch funcionan de la misma manera, a
+    través de la automatización, haciendo
+    <kbd class="mouse">clic derecho</kbd> en el encabezado de la pista MIDI
+    <kbd class="menu"
+        >&gt; Automatización &gt; Bender (o Presión) &gt; el canal para aplicar
+        el pitch-bend</kbd
+    >.
+</p>
+
+<p>
+    Usar la herramienta de Dibujo, como para todas las automatizaciones, permite
+    crear un cambio gradual de un punto dibujado a otro. Una línea en el centro
+    no produce ningún cambio en el pitch, mientras que una línea por encima del
+    centro doblará el pitch hacia una nota más alta, y una línea que vaya por
+    debajo del centro doblará el pitch hacia una nota más baja.
+</p>
+
+<p>
+    El cambio de pitch depende del plugin sintetizador utilizado. Los rangos
+    comunes son un cambio de ± 1, ± 2 o ± 4 semitonos para el rango de 0 a
+    16383. El rango generalmente está definido por el soundfont para cada
+    instrumento. Un valor de 8192, que también es el predeterminado, significa
+    que no hay cambio de pitch.
+</p>
+
+<p>
+    El aftertouch funciona de manera muy similar, aunque los valores están entre
+    0 y 127. Cabe destacar que el aftertouch difiere de la velocidad, ya que el
+    aftertouch permite cambiar ligeramente el timbre o crear un vibrato,
+    mientras que la velocidad establece la fuerza con la que se toca la nota
+    (por ejemplo, en un teclado, se presiona la tecla).
+</p>

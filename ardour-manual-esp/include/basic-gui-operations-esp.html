@@ -1,0 +1,207 @@
+<p>
+    De forma predeterminada, Ardour mostrará
+    <dfn>mensajes emergentes</dfn> útiles sobre el propósito y uso de cada
+    elemento de la
+    <abbr title="Interfaz Gráfica de Usuario">GUI</abbr>
+    si el puntero se posiciona sobre él y se mantiene allí por un breve momento.
+    Estos pequeños mensajes emergentes pueden ser una buena forma de descubrir
+    el propósito de muchos aspectos de la interfaz.
+</p>
+
+<p>
+    Sin embargo, los mensajes emergentes pueden resultar molestos para usuarios
+    experimentados, quienes pueden desactivarlos desde
+    <kbd class="optoff"
+        >Editar &gt; Preferencias &gt; Interfaz &gt; Mostrar mensajes emergentes
+        si el ratón se mantiene sobre un control</kbd
+    >.
+</p>
+
+<h2 id="selection-techniques">Técnicas de selección</h2>
+
+<p>
+    Ardour sigue las convenciones utilizadas por la mayoría del software de
+    computadora (incluyendo otros DAWs) para la
+    <dfn>selección de objetos</dfn> en la
+    <abbr title="Interfaz Gráfica de Usuario">GUI</abbr>.
+</p>
+
+<h3 id="selecting-individual-objects">Seleccionar objetos individuales</h3>
+
+<p>
+    Hacer clic en un objeto (a veces en una parte específica de su
+    representación en pantalla) seleccionará el objeto y deseleccionará otros
+    objetos similares.
+</p>
+
+<h3 id="selecting-multiple-objects">
+    Seleccionar múltiples objetos (similares)
+</h3>
+
+<p>
+    Un <kbd class="mod1 mouse">clic izquierdo</kbd> en un objeto alterna su
+    estado de selección, por lo que usar
+    <kbd class="mod1 mouse">clic izquierdo</kbd> en una serie de objetos
+    permitirá seleccionarlos (o deseleccionarlos) individualmente. Con esta
+    técnica, se puede construir un conjunto completamente arbitrario de
+    selecciones.
+</p>
+
+<h3 id="selecting-range-of-objects">Seleccionar un rango de objetos</h3>
+
+<p>
+    En los casos en que tenga sentido la idea de "seleccionar todos los objetos
+    entre este y aquel", selecciona un objeto y luego
+    <kbd class="mod3 mouse">clic izquierdo</kbd> en otro para seleccionar ambos,
+    así como todos los objetos intermedios.
+</p>
+
+<h3 id="time-range-selection">Selección de rango de tiempo</h3>
+
+<p>
+    Para seleccionar un <dfn>rango</dfn> de tiempo en el Editor,
+    <kbd class="mouse">clic izquierdo</kbd> y arrastra el mouse. Luego, un
+    <kbd class="mod1 mouse">arrastre con clic izquierdo</kbd> permite crear
+    otros rangos, y un <kbd class="mod3 mouse">clic izquierdo</kbd>
+    extiende un rango para cubrir un área más amplia.
+</p>
+
+<h3 id="selection-undo">Deshacer Selección</h3>
+
+<p>
+    El conjunto de objetos (incluyendo el rango de tiempo) que están
+    seleccionados en un momento dado se conoce como la selección. Cada vez que
+    un objeto es seleccionado o deseleccionado, la nueva selección se guarda en
+    una pila de deshacer/rehacer. Esta pila se borra cada vez que el contenido
+    de la línea de tiempo cambia.
+</p>
+
+<p>
+    Si se ha construido una selección compleja y luego se ha borrado
+    accidentalmente, al elegir
+    <kbd class="menu">Editar &gt; Deshacer cambio de selección</kbd> se
+    restaurará la selección anterior. Si una selección se deshace y se desea
+    volver al estado anterior al deshacer, al elegir
+    <kbd class="menu">Editar &gt; Rehacer cambio de selección</kbd>
+    la selección volverá al lugar en que estaba antes de que se eligiera
+    <kbd class="menu">Editar &gt; Deshacer cambio de selección</kbd>.
+</p>
+
+<h2 id="cut-and-paste">Operaciones de Cortar y Pegar</h2>
+
+<p>
+    El <dfn>portapapeles</dfn> es un contenedor para varios tipos de objetos
+    (regiones, eventos de control, plugins) que se utiliza durante las
+    <dfn>operaciones de cortar y pegar</dfn>.
+</p>
+
+<h3 id="cut">Cortar</h3>
+
+<p>
+    Una operación de <dfn>corte</dfn> elimina los objetos seleccionados y los
+    coloca en el portapapeles. El contenido existente del portapapeles se
+    sobrescribe. El atajo de teclado predeterminado es
+    <kbd class="mod1">x</kbd>.
+</p>
+
+<h3 id="copy">Copiar</h3>
+
+<p>
+    Una <dfn>copia</dfn> de los objetos seleccionados se coloca en el
+    portapapeles. No hay ningún efecto sobre los objetos seleccionados en sí. El
+    contenido existente del portapapeles se sobrescribe. El atajo de teclado
+    predeterminado es <kbd class="mod1">c</kbd>.
+</p>
+
+<h3 id="paste">Pegar</h3>
+
+<p>
+    El contenido actual del portapapeles se <dfn>pega</dfn> (inserta) en la
+    sesión, utilizando el <dfn>punto de edición</dfn> actual como destino. El
+    contenido del portapapeles permanece sin cambios—el mismo elemento puede
+    pegarse múltiples veces. El atajo de teclado predeterminado es
+    <kbd class="mod1">v</kbd>.
+</p>
+
+<h2 id="delete-objects">Eliminar Objetos</h2>
+
+<p>
+    Dentro de la ventana del Editor (y en cierta medida dentro de la ventana del
+    Mezclador también), existen varias técnicas para <dfn>eliminar</dfn> objetos
+    (regiones, puntos de control, y más).
+</p>
+
+<h3 id="using-mouse-keyboard">Usando el ratón y el teclado</h3>
+
+<p>
+    Selecciona el(los) objeto(s) que deseas eliminar y luego presiona la tecla
+    <kbd>Del</kbd>. Esto <strong>no</strong> coloca el objeto(s) eliminado(s) en
+    el portapapeles, por lo que no se podrá pegar en otro lugar.
+</p>
+
+<h3 id="using-cut-paste-shortcuts">
+    Usando los accesos directos normales de cortar y pegar
+</h3>
+
+<p>
+    Selecciona el(los) objeto(s) y luego presiona <kbd class="mod1">x</kbd>.
+    Esto coloca el objeto(s) eliminado(s) en el portapapeles, para que pueda ser
+    pegado en otro lugar.
+</p>
+
+<h3 id="using-just-mouse">Usando solo el ratón</h3>
+
+<p>
+    Por defecto, <kbd class="mouse">Shift + clic derecho</kbd> eliminará el
+    objeto sobre el que se haga clic. Al igual que con la tecla <kbd>Del</kbd>,
+    esto <strong>no</strong> coloca el objeto(s) eliminado(s) en el
+    portapapeles.
+</p>
+
+<p class="note">
+    El modificador y el botón del ratón usados para esto pueden ser controlados
+    a través de
+    <kbd class="menu"
+        >Editar &gt; Preferencias &gt; Interacción del Usuario &gt; Eliminar
+        usando &hellip;</kbd
+    >. Se puede usar cualquier combinación de modificador y botón del ratón.
+</p>
+
+<h2 id="undo-redo-editing">Deshacer/rehacer para edición</h2>
+
+<p>
+    Mientras se edita, a veces ocurre que se realiza un cambio no deseado, o se
+    toma una decisión que luego se considera incorrecta. Todos los cambios en la
+    disposición de los componentes de la sesión (regiones, puntos de control) a
+    lo largo de la línea de tiempo pueden ser <dfn>deshechos</dfn> (y
+    <dfn>rehacerse</dfn> si es necesario).
+</p>
+
+<p>
+    Las combinaciones de teclas predeterminadas son
+    <kbd class="mod1">Z</kbd> para Deshacer y <kbd class="mod1">R</kbd> para
+    Rehacer. Estas siguen las convenciones de la mayoría de otras aplicaciones
+    que ofrecen deshacer/rehacer.
+</p>
+
+<p>
+    Los cambios también se guardan en el archivo de
+    <dfn>historial de la sesión</dfn>, de modo que es posible deshacer/rehacer
+    incluso si la sesión se cierra y se vuelve a abrir más tarde, incluso si
+    Ardour se cierra entre medio.
+</p>
+
+<p>
+    El número máximo de cambios que se pueden deshacer se puede configurar en
+    <kbd class="menu">Editar &gt; Preferencias &gt; Varios &gt; Deshacer</kbd>.
+    El número máximo de cambios almacenados en el archivo de historial es un
+    parámetro separado, y también se puede establecer en el mismo lugar.
+</p>
+
+<p class="note">
+    Además del deshacer normal (que solo funciona en acciones que cambian la
+    línea de tiempo), existe un <dfn>deshacer visual</dfn> que revertirá
+    cualquier comando que afecte la visualización de la ventana del editor. Su
+    combinación de teclas es <kbd class="mod3">Z</kbd>. También existe un
+    deshacer para la selección; consulta "Técnicas de selección" más arriba.
+</p>

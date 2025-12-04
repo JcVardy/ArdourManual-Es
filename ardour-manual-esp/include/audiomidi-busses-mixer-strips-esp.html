@@ -1,0 +1,216 @@
+<figure class="right">
+    <img src="/images/bus-mixer-strip.png" alt="Una tira de mezcla de bus" />
+    <figcaption>Una tira de mezcla de bus</figcaption>
+</figure>
+
+<p>
+    Un bus en Ardour puede considerarse una pista virtual, ya que es una pista
+    que no tiene una lista de reproducción (por lo tanto, sin regiones). Su uso
+    es "agrupar" algunas señales de audio para tratarlas de la misma manera. Un
+    caso de uso simple es agrupar todas las pistas de audio que contienen los
+    diferentes tambores de una batería. Enrutar las salidas de todas las pistas
+    de batería a un bus permite, una vez que se hayan ajustado los niveles entre
+    los tambores, ajustar el nivel global de la batería en la mezcla.
+</p>
+<p>
+    El uso de los buses va mucho más allá de este simple ejemplo: los buses, al
+    igual que las pistas, pueden recibir plugins para tratamiento común de
+    audio, y ser enrutados según sea necesario. Esto lo convierte en una
+    herramienta muy útil que se usa comúnmente tanto para fines musicales como
+    de computación: en lugar de usar, por ejemplo, diez plugins de delay
+    discretos en diez pistas diferentes, los buses a menudo se usan como
+    receptores de <a href="@@aux-sends">envíos</a>, y solo se usa un plugin de
+    delay en este bus, reduciendo el poder de procesamiento necesario.
+</p>
+
+<h2>Bus de Audio vs Bus de MIDI</h2>
+
+<p>
+    Ardour soporta dos tipos de buses: Audio y MIDI. Un bus de MIDI se
+    diferencia de un bus de audio solo por:
+</p>
+<ul>
+    <li>
+        su entrada (que es MIDI, como se muestra con las líneas rojas de señal
+        en la caja del procesador) en lugar de <em>n</em> audio
+    </li>
+    <li>
+        el hecho de que se puede colocar un instrumento en él al momento de su
+        creación, mientras que no se puede hacer fácilmente en un bus de audio
+    </li>
+    <li>
+        como las pistas, el bus de MIDI no tiene un botón de ajuste de ganancia
+        de entrada o un botón de inversión de fase.
+    </li>
+</ul>
+<p>
+    Los buses de MIDI proporcionan un flujo de trabajo particularmente eficiente
+    para kits de batería virtuales donde la disposición usa diferentes pistas
+    MIDI. Además, los buses con entradas tanto de Audio como de MIDI son ideales
+    para vocoders y plugins similares, donde una señal MIDI controla una señal
+    de audio.
+</p>
+<p class="note">
+    Agregar cualquier entrada de audio a un bus de MIDI lo convierte en un bus
+    de audio.
+</p>
+
+<h2>Descripción</h2>
+<p>
+    Los buses se ven y se comportan exactamente igual que las pistas, por lo que
+    comparten casi <a href="@@audiomidi-mixer-strips"> todos sus controles</a>.
+    Las diferencias son:
+</p>
+<ul>
+    <li>
+        Como los buses no tienen una lista de reproducción (y no pueden alojar
+        ningún medio), no se puede grabar en ellos. Los controles de grabación
+        no están presentes.
+    </li>
+    <li>Un botón <kbd class="menu">Aux</kbd> reemplaza estos controles.</li>
+</ul>
+<p>
+    Al hacer clic en el botón <kbd class="menu">Aux</kbd>, todas las pistas que
+    envían una señal a este bus a través de
+    <a href="@@aux-sends">Aux sends</a> parpadean en turquesa. Hacer clic
+    derecho en este botón abre un menú:
+</p>
+
+<table class="dl">
+    <tr>
+        <th>Asignar todas las pistas (prefader)</th>
+        <td>
+            Crea un envío auxiliar en cada pista, hacia este bus. El envío se
+            coloca justo antes del fader
+        </td>
+    </tr>
+    <tr>
+        <th>Asignar todas las pistas y buses (prefader)</th>
+        <td>
+            Crea un envío auxiliar en cada pista y cada bus, hacia este bus. El
+            envío se coloca justo antes del fader
+        </td>
+    </tr>
+    <tr>
+        <th>Asignar todas las pistas (postfader)</th>
+        <td>
+            Lo mismo que lo anterior, pero el envío se coloca justo después del
+            fader
+        </td>
+    </tr>
+    <tr>
+        <th>Asignar todas las pistas y buses (postfader)</th>
+        <td>Lo mismo que lo anterior, con pistas y buses</td>
+    </tr>
+    <tr>
+        <th>Asignar pistas seleccionadas (prefader)</th>
+        <td>
+            Lo mismo que para todas las pistas, pero solo se aplica a las pistas
+            seleccionadas
+        </td>
+    </tr>
+    <tr>
+        <th>Asignar pistas y buses seleccionados (prefader)</th>
+        <td>
+            Lo mismo que para todas las pistas y buses, pero solo se aplica a
+            las pistas y buses seleccionados
+        </td>
+    </tr>
+    <tr>
+        <th>Asignar pistas seleccionadas (postfader)</th>
+        <td>
+            Lo mismo que lo anterior, pero el envío se coloca justo después del
+            fader
+        </td>
+    </tr>
+    <tr>
+        <th>Asignar pistas y buses seleccionados (postfader)</th>
+        <td>Lo mismo que lo anterior, con pistas y buses</td>
+    </tr>
+    <tr>
+        <th>Establecer ganancia de los envíos a -inf</th>
+        <td>
+            Para todos los envíos a este bus, poner el fader de envío en
+            &minus;&infin; para que no se envíe señal
+        </td>
+    </tr>
+    <tr>
+        <th>Establecer ganancia de los envíos a 0dB</th>
+        <td>
+            Para todos los envíos a este bus, poner el fader de envío en la
+            posición predeterminada, 0dB (se envía el 100&percnt; de la señal)
+        </td>
+    </tr>
+</table>
+
+<h2>Conectar una pista a un bus</h2>
+<p>
+    Dependiendo del flujo de trabajo del usuario y de cómo se usen los buses,
+    existen dos posibilidades:
+</p>
+
+<h3>Conectar una pista a un bus a través de sus salidas</h3>
+
+<figure class="left">
+    <img
+        src="/images/connecting_bus_output.png"
+        alt="Conectar un bus a través de las salidas de una pista"
+    />
+    <figcaption>
+        Conectar un bus a través de las salidas de una pista
+    </figcaption>
+</figure>
+
+<p>
+    Conectar la(s) salida(s) de una pista a la(s) entrada(s) de un bus envía
+    <em>todo</em> el audio/MIDI al bus. En la tira del mezclador, selecciona (en
+    la parte inferior) el botón salida (OUTPUT) (a menudo, por defecto, "Master"
+    o "Maestro"), y en la lista, elige la entrada de un bus. Ten en cuenta que
+    solo el bus capaz de recibir esta salida aparecerá, por ejemplo, un bus mono
+    no podrá conectarse a la salida de una pista estéreo).
+</p>
+<p>
+    Obviamente, al hacer esto se desconectará (por defecto) la salida de la
+    entrada del Master, lo que significa que todo el audio/MIDI será dirigido al
+    bus. Para un enrutamiento más complejo, el botón Salida (OUTPUT) permite
+    mostrar la <kbd class="menu">Cuadrícula de Enrutamiento</kbd> que permite
+    conectar la salida de la pista a múltiples salidas al mismo tiempo, ya sean
+    buses, pistas, Master… El botón reflejará estas conexiones múltiples
+    mostrando un <em>*número*</em>, siendo el número de conexiones realizadas en
+    la cuadrícula de enrutamiento.
+</p>
+
+<h3>Conectar una pista a un bus mediante envíos</h3>
+
+<figure class="left">
+    <img
+        src="/images/connecting_bus_send.png"
+        alt="Conectando un bus a través de un envío"
+    />
+    <figcaption>Conectando un bus a través de un envío</figcaption>
+</figure>
+
+<p>
+    Esto permite no interrumpir el flujo natural de la señal, es decir, la pista
+    seguirá enviando su señal a lo que está conectada (por ejemplo, el Master).
+    La señal es "capturada" en el punto de inserción del envío, para ser enviada
+    al bus, haciendo
+    <kbd class="mouse">clic derecho</kbd> en el punto de la señal donde se debe
+    interceptar y seleccionando
+    <kbd class="menu">Nuevo Envío Auxiliar… &gt; nombre_del_bus</kbd>.
+</p>
+
+<p>
+    Al <kbd class="mouse">hacer clic izquierdo</kbd> en el medidor del envío, es
+    posible ajustar la cantidad de señal enviada al bus. Esta es a menudo la
+    forma en que las pistas se conectan a un bus de efectos, como un bus de
+    Delay.
+</p>
+
+<p class="note">
+    Los busses pueden conectarse a otros busses, ya sea a través de salidas o
+    envíos. Ambos flujos de trabajo mencionados anteriormente, es decir, busses
+    para agrupar pistas y busses para efectos, pueden coexistir, ya que, por
+    ejemplo, un bus de batería "de agrupamiento" puede tener un envío a un bus
+    de reverberación y estar conectado a un bus de compresor.
+</p>

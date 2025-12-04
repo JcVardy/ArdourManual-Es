@@ -1,0 +1,8 @@
+
+Este documento albergará criterios ahunados sobre la traducción de Ardour al español.
+
+
+- El modo de edición "Ripple" debe llamarse "Cascada" en vez de "Risado". Esta traducción es más clara en cuanto al funcionamiento de dicho modo.
+- Definir términos para las "pistas de Audio" y las "pistas de Automatización". En inglés se usan "Tracks" y "Lanes". Para automatización podría utilizarse "carriles".
+- trigger slot - Ranura de activación.
+- Cues se traduce como "Entradas".

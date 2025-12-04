@@ -1,0 +1,99 @@
+<p>
+    Todos los detalles de las notas seleccionadas se pueden ver haciendo clic
+    derecho sobre ellas. El cuadro de diálogo que aparece también permite
+    modificar todas las propiedades de las notas seleccionadas. Las propiedades
+    individuales también se pueden modificar de manera más eficiente utilizando
+    las técnicas descritas a continuación:
+</p>
+
+<table class="dl">
+    <tr>
+        <th>Mover notas</th>
+        <td>
+            <kbd>&larr;</kbd> y <kbd>&rarr;</kbd> mueven las notas seleccionadas
+            hacia adelante o hacia atrás en el tiempo.
+        </td>
+    </tr>
+    <tr>
+        <th>Cambiar valores de tono</th>
+        <td>
+            <kbd>&uarr;</kbd> aumenta el tono de las notas seleccionadas.<br />
+            <kbd>&darr;</kbd> disminuye el tono de las notas seleccionadas.<br />
+            Si alguna de las notas seleccionadas ya está en su valor mínimo o
+            máximo, no se realizarán cambios en ellas para preservar sus tonos
+            relativos. Esto se puede anular con <kbd class="mod2"> </kbd>. La
+            distancia de desplazamiento predeterminada es un semitono.
+            <kbd class="mod3"> </kbd> cambia esto a una octava.
+        </td>
+    </tr>
+    <tr>
+        <th>Cambiar valores de velocidad</th>
+        <td>
+            <kbd class="mod1">&uarr;</kbd> aumenta la velocidad de las notas
+            seleccionadas.
+            <br />
+            <kbd class="mod1">&darr;</kbd> disminuye la velocidad de las notas
+            seleccionadas.<br />
+            Si alguna de las notas seleccionadas ya está en su valor mínimo o
+            máximo, no se realizarán cambios en ellas para preservar sus
+            velocidades relativas. Esto se puede anular con
+            <kbd class="mod2"> </kbd>. Además, al presionar <kbd>v</kbd> se
+            abrirá un cuadro de diálogo que permite establecer el valor absoluto
+            de velocidad para todas las notas seleccionadas. Finalmente, la
+            rueda de desplazamiento del ratón <kbd class="mouse">&uArr;</kbd>
+            <kbd class="mouse">&dArr;</kbd> también ajustará la velocidad de las
+            notas de la misma manera que las teclas de flecha (ten en cuenta
+            que, al igual que las teclas de flecha, solo afecta a las notas
+            seleccionadas, no a la nota sobre la que está el puntero).
+        </td>
+    </tr>
+    <tr>
+        <th>Cambiar canal</th>
+        <td>
+            Al presionar <kbd>c</kbd> se abrirá un cuadro de diálogo que permite
+            ver y/o modificar el canal MIDI de las notas seleccionadas. Si las
+            notas seleccionadas usan diferentes canales, todas serán forzadas al
+            nuevo canal seleccionado.
+        </td>
+    </tr>
+    <tr>
+        <th>Cambiar inicio/fin/duración</th>
+        <td>
+            Para hacer la nota más larga, <kbd>,</kbd> (coma) alterará el tiempo
+            de inicio de la nota.<br />
+            <kbd>.</kbd> (punto) alterará el tiempo de finalización de la nota.
+            Para hacer la nota más corta (mover el inicio más tarde o el final
+            más temprano), se puede usar <kbd class="mod1">,</kbd>/<kbd
+                class="mod1"
+                >.</kbd
+            >. Tanto al acortar como al alargar la nota, su duración se ajustará
+            según la configuración actual de la cuadrícula. Para cambiar las
+            posiciones de inicio/fin en 1/128 de un tiempo, se debe agregar el
+            modificador <kbd class="mod2"> </kbd>
+            a estos atajos.
+        </td>
+    </tr>
+    <tr>
+        <th>Cuantización</th>
+        <td>
+            <kbd>q</kbd> cuantizará las notas seleccionadas utilizando la
+            configuración de cuantización actual. Si la configuración de
+            cuantización aún no se ha establecido en esta sesión, aparecerá el
+            cuadro de diálogo de cuantización.
+            <kbd class="mod2">q</kbd> mostrará el cuadro de diálogo de
+            cuantización para permitir editar la configuración actual y luego
+            cuantizará las notas seleccionadas. La configuración de cuantización
+            predeterminada es: cuantizar el inicio de las notas según la
+            configuración actual de la cuadrícula, sin swing, sin umbral y con
+            máxima intensidad.
+        </td>
+    </tr>
+    <tr>
+        <th>Entrada por pasos, cuantización, etc.</th>
+        <td>
+            Consulta las páginas específicas de
+            <a href="@@step-entry">Entrada por pasos</a>,
+            <a href="@@quantize-midi">Cuantización de MIDI</a>, etc.
+        </td>
+    </tr>
+</table>

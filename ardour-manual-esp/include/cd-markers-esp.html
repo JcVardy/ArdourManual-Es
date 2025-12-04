@@ -1,0 +1,202 @@
+<p>
+    Los <dfn>Marcadores CD</dfn> son útiles para producir hojas de indicaciones
+    (Cue sheets) y archivos TOC que describen cómo se organizan las pistas en un
+    medio de audio CD y cómo se nombran estas pistas. Estos marcadores se
+    muestran en la regla de Marcadores de Ubicación.
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/cd-markers.png"
+        alt="Regla de marcadores CD"
+    />
+    <figcaption>Marcadores CD</figcaption>
+</figure>
+
+<h2 id="creating-cd-markers">Creación de Marcadores CD</h2>
+
+<p>
+    Ardour soporta dos tipos de marcadores CD: simples y emparejados. Cada uno
+    de ellos funciona mejor en un escenario particular (más detalles a
+    continuación).
+</p>
+
+<p>Existen varias formas de crear un marcador CD simple:</p>
+
+<ul>
+    <li>
+        Haciendo <kbd class="mouse">clic derecho</kbd> en la regla de Marcadores
+        de Ubicación y seleccionando
+        <kbd class="menu">Agregar &gt; Marcador de Pista CD</kbd>.
+    </li>
+    <li>
+        Cualquier marcador de ubicación preexistente puede convertirse en un
+        marcador CD. Así, haciendo clic en el botón <kbd>Nuevo Marcador</kbd> en
+        la parte inferior de la barra lateral de
+        <kbd class="window">Rangos&nbsp;&amp; Marcadores</kbd>, luego
+        habilitando la casilla <kbd class="option">CD</kbd> para el marcador
+        recién creado, se creará efectivamente un nuevo marcador CD.
+    </li>
+</ul>
+
+<p>También existen varias formas de crear marcadores CD emparejados:</p>
+
+<ul>
+    <li>
+        Haciendo <kbd class="mouse mod1">clic izquierdo</kbd> y arrastrando en
+        la regla de Marcadores CD se mostrará un área de vista previa rellena de
+        color rojo que abarca el futuro rango del marcador CD. Soltar el botón
+        del ratón creará un par de marcadores CD llamados 'CD<em>N</em>', donde
+        N es un número que comienza en 1 y se incrementa en 1 (por ejemplo, CD2,
+        CD3, etc.) para cada nuevo par de rangos de marcadores CD.
+    </li>
+    <li>
+        Crear un nuevo par de
+        <a href="@@creating-range-markers">marcadores de rango</a> de cualquier
+        manera compatible, luego habilitar la casilla
+        <kbd class="option">CD</kbd> para los marcadores de rango recién
+        creados.
+    </li>
+</ul>
+
+<h2 id="single-vs-paired-markers">Elegir entre Marcadores Simples y Pares</h2>
+
+<p>
+    Los marcadores simples y pares están diseñados para casos de uso
+    específicos, lo que tiene mucho que ver con cómo se organizan las pistas en
+    la sesión de Ardour y cómo funcionan las hojas de pistas.
+</p>
+
+<p>
+    Los marcadores simples funcionan mejor cuando cada canción comienza
+    inmediatamente después de la anterior. En ese caso, la hoja de pistas solo
+    hará referencia al inicio de cada canción (la sección 'INDEX 01'), y el
+    archivo TOC contendrá rangos que van desde el inicio de una canción hasta el
+    inicio de la siguiente canción.
+</p>
+
+<p>
+    Los marcadores pares definen un <em>rango</em> que abarca una canción. Esto
+    funciona mejor cuando hay espacios entre las canciones en la sesión. En ese
+    caso, para cada canción, la hoja de pistas también contendrá la sección
+    'INDEX 00' que hará referencia al inicio del pregap —el espacio entre
+    canciones. Esto indicará al software de autoría de CD qué partes del archivo
+    de audio excluir al grabar en un CD. El archivo TOC creará rangos
+    exactamente como se definen por los marcadores CD pares.
+</p>
+
+<h2 id="editing-cd-markers">Editar Marcadores CD</h2>
+
+<p>
+    Existen varias formas de renombrar los marcadores CD (tanto los simples como
+    los pares):
+</p>
+
+<ul>
+    <li>
+        Haciendo doble clic sobre un marcador o haciendo clic derecho sobre él y
+        seleccionando la opción <kbd class="menu">Renombrar…</kbd> (para
+        marcadores simples) o <kbd class="menu">Renombrar Rango</kbd> (para
+        marcadores pares), se abrirá el cuadro de diálogo donde se puede cambiar
+        el nombre.
+    </li>
+    <li>
+        El nombre también se puede cambiar en la barra lateral
+        <kbd class="window">Rangos&nbsp;&amp; Marcas</kbd> reemplazando el
+        nombre existente y presionando la tecla <kbd>Enter</kbd>.
+    </li>
+</ul>
+
+<p class="note">
+    El nombre del marcador CD es principalmente el nombre de la pista visible en
+    el software y en los equipos capaces de mostrar los nombres individuales de
+    las pistas. Otros metadatos del disco, como el nombre de la banda, el año,
+    el número total de pistas, etc., se definen en el cuadro de diálogo
+    <a href="@@metadata">Editar Metadatos de la Sesión</a>.
+</p>
+
+<p>
+    Hay campos adicionales para los marcadores CD que solo están disponibles
+    para su edición en la barra lateral
+    <kbd class="window">Rangos&nbsp;&amp; Marcas</kbd>. Toda esta información
+    adicional solo se escribe en los archivos CUE y TOC para el software de
+    autoría de CDs.
+</p>
+
+<table class="dl">
+    <tr>
+        <th>ISRC</th>
+        <td>
+            El Código Internacional Estándar de Grabación, o
+            <a href="https://usisrc.org/">ISRC</a>, es un ID único de grabación
+            emitido por la Asociación de la Industria Musical de América (RIAA)
+            para cada pista de forma separada.
+        </td>
+    </tr>
+    <tr>
+        <th>Intérprete</th>
+        <td>
+            Una banda, una orquesta o un músico individual que interpretó la
+            pista.
+        </td>
+    </tr>
+    <tr>
+        <th>Compositor</th>
+        <td>El compositor que tiene la autoría sobre la música en la pista.</td>
+    </tr>
+    <tr>
+        <th>SCMS</th>
+        <td>
+            Esto habilita el Sistema de Gestión de Copias Seriales (SCMS), que
+            es un esquema de protección contra copias dirigido al uso de cintas
+            digitales de audio (DAT) y permite la primera generación de copias
+            del track original, mientras que impide la segunda generación de
+            copias (copias de copias).
+        </td>
+    </tr>
+    <tr>
+        <th>Pre-Énfasis</th>
+        <td>
+            Esto está dirigido al uso de equipos de reproducción de CD más
+            antiguos que utilizan un convertidor de 14 bits (mientras manejan
+            datos de 16 bits) y filtros ruidosos para eliminar frecuencias
+            superiores a 22050 Hz (la frecuencia de Nyquist). A menos que se
+            trate específicamente, el uso de tal equipo resulta en ruido
+            especialmente audible en frecuencias más altas. La bandera de
+            pre-énfasis le indica al software de autoría de CD que realice dos
+            cosas: aplicar una curva de ecualización para aumentar las
+            frecuencias más altas y "más débiles", así como escribir una bandera
+            de pre-énfasis en el subcódigo almacenado junto a los datos de
+            audio, para que el software o equipo de reproducción capaz de
+            realizar de-énfasis procese los datos en consecuencia.
+        </td>
+    </tr>
+</table>
+
+<h2 id="removiendo-marcadores-cd">Eliminando Marcadores CD</h2>
+
+<p>Los marcadores CD pueden ser eliminados de varias maneras:</p>
+
+<ul>
+    <li>Haciendo clic en un marcador y presionando la tecla <kbd>Del</kbd>.</li>
+    <li>
+        Haciendo clic derecho sobre un marcador y seleccionando
+        <kbd class="menu">Eliminar</kbd> (marcador único) o
+        <kbd class="menu">Eliminar Rango</kbd> (marcador emparejado).
+    </li>
+    <li>
+        Haciendo clic en el botón <kbd>x</kbd> del marcador en la barra lateral
+        de <em>Rangos&nbsp;&amp; Marcas</em>.
+    </li>
+</ul>
+
+<h2 id="mas-opciones">Más Opciones</h2>
+
+<p>
+    El menú de clic derecho para los marcadores CD individuales y emparejados
+    replica el de los
+    <a href="@@creando-marcadores-de-ubicacion">marcadores de ubicación</a> y
+    <a href="@@creando-marcadores-de-rango">marcadores de rango</a>
+    respectivamente.
+</p>

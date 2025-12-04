@@ -1,0 +1,53 @@
+<p>
+    Una <dfn>pista de automatización</dfn> es similar a una pista en el sentido
+    de que contiene datos que pueden ser reproducidos. Sin embargo, a diferencia
+    de una pista, no es una entidad independiente— siempre está asociada a la
+    pista que controla. Las pistas de automatización también contienen de cero a
+    una <dfn>curva de automatización</dfn>. Cada pista controla uno y solo un
+    parámetro de la pista a la que está asociada.
+</p>
+
+<p>
+    Cada pista tendrá al menos cinco pistas de automatización asociadas con
+    ella: trim (ganancia de entrada), fader, mudo y paneo (que consta de dos
+    pistas: I/D y Ancho); posiblemente pueda tener muchas más si tiene algún
+    procesador asociado. Todas estas pistas se asocian automáticamente a la
+    pista pero permanecen ocultas, y inicialmente todas están vacías (sin curvas
+    de automatización en ellas).
+</p>
+
+<figure class="center">
+    <img src="/images/automation-multi-lane1.png" />
+    <figcaption class="center">
+        Un ejemplo de una pista con tres pistas de automatización (fader y
+        paneo).
+    </figcaption>
+</figure>
+
+<p>
+    Las pistas de automatización generalmente tienen los siguientes controles:
+</p>
+
+<ul>
+    <li>Un botón de ocultar (botón cuadrado con una "X" en su interior)</li>
+    <li>Un fader horizontal</li>
+    <li>Un selector de <dfn>modo de automatización</dfn></li>
+</ul>
+
+<p>
+    El botón de ocultar, como su nombre indica, oculta la pista de
+    automatización. El fader horizontal controla el nivel del parámetro que la
+    pista controla; manipular esto mientras está en modo
+    <kbd class="menu">Escribir</kbd> o <kbd class="menu">Tocar</kbd> durante la
+    reproducción realizará cambios en la curva de automatización de la pista. El
+    selector de modo de automatización selecciona en qué modo se encuentra la
+    pista (<kbd class="menu">Manual</kbd>, <kbd class="menu">Reproducir</kbd>,
+    <kbd class="menu">Escribir</kbd> o <kbd class="menu">Tocar</kbd>).
+</p>
+
+<p class="note">
+    El botón de ocultar solo ocultará la pista; no la eliminará de la pista
+    original. La pista de automatización nunca desaparece realmente&mdash;lo más
+    cercano que se puede lograr a eso es borrar la curva de automatización y
+    ocultar la pista.
+</p>

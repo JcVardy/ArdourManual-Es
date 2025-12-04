@@ -1,0 +1,100 @@
+<p>
+    Grabar y editar cualquier sesión seria puede dejar la sesión con algunos
+    archivos no utilizados o fuera de lugar. Ardour puede ayudar a manejar este
+    desorden gracias a las herramientas ubicadas en el menú
+    <kbd class="menu">Sesión &gt; Limpieza</kbd>.
+</p>
+
+<h2 id="bring_all_media_into_session_folder">
+    Traer todos los medios a la carpeta de la sesión
+</h2>
+
+<p>
+    Al <a href="@@adding-pre-existing-material">importar archivos de medios</a>,
+    si la opción <kbd class="option">Copiar archivos a la sesión</kbd> no ha
+    sido marcada, Ardour usa el archivo de origen desde su ubicación original,
+    lo que puede ayudar a evitar la duplicación de archivos. No obstante, cuando
+    la sesión necesita archivarse o transferirse a otra computadora, mover la
+    carpeta de la sesión no trasladará esos archivos <em>externos</em>, ya que
+    no están en la carpeta, como se explica en
+    <a href="@@backup-and-sharing-of-sessions"
+        >Copia de seguridad y compartición de sesiones</a
+    >.
+</p>
+
+<p>
+    Usar el menú
+    <kbd class="menu">Traer todos los medios a la carpeta de la sesión</kbd>
+    garantiza que todos los archivos de medios utilizados en la sesión estén
+    ubicados dentro de la carpeta de la sesión, evitando así la pérdida de
+    archivos al copiarlos.
+</p>
+
+<h2 id="reset_peak_files">Restablecer archivos de picos</h2>
+
+<p>
+    Ardour representa las formas de onda de audio con archivos de picos, que son
+    imágenes gráficas generadas a partir de los archivos de sonido. Esta
+    generación puede consumir tiempo y recursos de CPU, por lo que utiliza una
+    caché de las imágenes generadas para acelerar el proceso de visualización.
+    Para detectar modificaciones en los archivos, Ardour se basa en la fecha de
+    modificación del archivo. Si un archivo externo está incrustado en la sesión
+    y dicho archivo cambia, pero el reloj del sistema está desincronizado o se
+    encuentra en un disco USB externo (VFAT), Ardour no podrá detectar el cambio
+    y seguirá usando sus archivos de picos obsoletos.
+</p>
+
+<p>
+    Usar el menú <kbd class="menu">Restablecer archivos de picos</kbd> permite
+    restablecer esta caché, lo que libera espacio en disco y fuerza la
+    recreación de los archivos de picos utilizados en la sesión. Esto puede ser
+    útil si algunas formas de onda ya no se utilizan o si ocurre un error
+    gráfico o de sincronización temporal.
+</p>
+
+<h2 id="clean_up_unused_sources">Limpiar fuentes no utilizadas&hellip;</h2>
+
+<p>
+    La grabación suele dejar muchas tomas no utilizadas, ya sea en formato MIDI
+    o de audio, lo que puede saturar la Lista de Regiones y ocupar mucho espacio
+    en el disco duro. Aunque, en general, es una buena práctica conservar la
+    mayor cantidad posible de material durante la grabación, al transferir o
+    archivar la sesión, realizar una limpieza puede ayudar mucho a reducir el
+    desorden y el tamaño de la sesión.
+</p>
+
+<p>
+    Seleccionar
+    <kbd class="menu">Limpiar fuentes no utilizadas&hellip;</kbd> obligará a
+    Ardour a detectar esas formas de onda no utilizadas buscando regiones sin
+    uso y, mediante un aviso, listas de reproducción no utilizadas. Sin embargo,
+    los archivos de medios no serán eliminados. En esta etapa, simplemente se
+    copiarán en un lugar específico dentro de la ruta de la sesión
+    (concretamente, en la subcarpeta <code>dead sounds/</code>).
+</p>
+
+<h2 id="flush_wastebasket">Vaciar papelera</h2>
+
+<p>
+    Aunque Ardour es un editor de audio <em>no destructivo</em>, permite una
+    eliminación muy controlada de materiales de medios no utilizados. Esta
+    función está estrechamente relacionada con la anterior. Cuando las fuentes
+    no utilizadas han sido limpiadas y puestas en cuarentena, el menú
+    <kbd class="menu">Vaciar papelera</kbd> permitirá su eliminación física.
+</p>
+
+<p>
+    Como mecanismo de seguridad, vaciar la papelera es imposible en la misma
+    sesión de trabajo en la que se han limpiado las fuentes no utilizadas: el
+    usuario debe cerrar la sesión y volver a cargarla antes de vaciarla. Esto
+    permite probar la reproducción de la sesión y asegurarse de que Ardour no ha
+    cometido ningún error (algo poco probable, pero más vale prevenir), y de que
+    el usuario está completamente seguro de lo que hace.
+</p>
+
+<p class="warning">
+    Todos los archivos eliminados de esta manera no se envían a la
+    <em>papelera del sistema</em>, sino que se eliminan permanentemente. Si un
+    archivo se borra por error, el usuario deberá recurrir a técnicas de
+    recuperación de datos para intentar recuperarlo.
+</p>

@@ -1,0 +1,390 @@
+<h2 id="ace-compressor">Compresor ACE</h2>
+
+<p>
+    El trabajo de este filtro es hacer que una grabación de audio sea percibida
+    como más fuerte reduciendo el rango dinámico, es decir, la diferencia entre
+    las partes más altas y las más bajas. El compresor ACE reduce el volumen de
+    los sonidos fuertes por encima de un umbral definido por el usuario, medido
+    en dB, luego se aumenta la ganancia de todo el sonido para compensar la
+    pérdida de volumen.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/a-compressor.png"
+        alt="Compresor ACE"
+    />
+    <figcaption>Compresor ACE</figcaption>
+</figure>
+
+<p>Las configuraciones disponibles son:</p>
+
+<ul>
+    <li>
+        <strong>Umbral</strong>. Esta configuración define el volumen a partir
+        del cual el compresor comenzará a funcionar.
+    </li>
+    <li>
+        <strong>Knee</strong>. Define si la transición de sin comprimir a
+        comprimido es suave o brusca. El efecto es más notorio con ratios
+        mayores.
+    </li>
+    <li>
+        <strong>Ratio</strong>. Define cuánto se reduce la ganancia por encima
+        de un cierto umbral. Si la relación es, por ejemplo, 5:1, 5 dB se
+        convertirán en 1 dB.
+    </li>
+    <li>
+        <strong>Ataque</strong>. Cuánto tiempo (en ms) tarda en aplicarse la
+        compresión máxima.
+    </li>
+    <li>
+        <strong>Liberación</strong>. Cuánto tiempo tarda en volver a la
+        compresión cero.
+    </li>
+    <li>
+        <strong>Ganancia de compensación</strong>. Cuánto debe aumentarse el
+        nivel general después de reducir las secciones más fuertes.
+    </li>
+    <li>
+        <strong>Sidechain</strong>. Si el efecto debe ser activado por el
+        volumen de la señal de audio en otra pista que supera un cierto umbral.
+    </li>
+</ul>
+<p>
+    El plugin también proporciona una visualización en línea opcional que
+    muestra la señal de entrada, el umbral y la reducción de ganancia
+    resultante:
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/a-compressor-inline.png"
+        alt="Visualización en línea del ACE Compressor"
+    />
+    <figcaption>Visualización en línea</figcaption>
+</figure>
+
+<h2 id="ace-expander">ACE Expander</h2>
+
+<p>
+    A diferencia de los compresores, los expansores aumentan el rango dinámico,
+    ya sea haciendo los sonidos suaves más bajos (expansores descendentes) o
+    haciendo los sonidos fuertes más altos (expansores ascendentes).
+    <em>ACE Expander</em> es un expansor descendente. Reduce el nivel de una
+    señal por debajo de un umbral definido por el usuario mediante una relación
+    también definida por el usuario, y luego, opcionalmente, aumenta la ganancia
+    general para compensar la pérdida de volumen.
+</p>
+
+<figure>
+    <img style="width: 50%" src="/images/a-expander.png" alt="ACE Expander" />
+    <figcaption>ACE Expander</figcaption>
+</figure>
+
+<p>Las configuraciones disponibles son:</p>
+
+<ul>
+    <li>
+        <strong>Ataque</strong>. Cuánto tiempo (en ms) tarda en aplicar la
+        reducción máxima de las secciones suaves.
+    </li>
+    <li>
+        <strong>Relajación</strong>. Cuánto tiempo tarda en dejar de reducir la
+        señal suave por completo.
+    </li>
+    <li>
+        <strong>Knee</strong>. Si la transición de nivel de señal no reducido a
+        reducido es suave o abrupta. El efecto es más notable con ratios
+        mayores.
+    </li>
+    <li>
+        <strong>Ratio</strong>. Cuánto se reduce la ganancia por debajo de un
+        cierto umbral. Si el ratio es, por ejemplo, 3:1, -10dB se convertirá en
+        -30dB.
+    </li>
+    <li>
+        <strong>Umbral</strong>. El volumen al que el expansor comenzará a
+        funcionar.
+    </li>
+    <li>
+        <strong>Ganancia de compensación</strong>. Cuánto debe aumentarse el
+        nivel general después de reducir las secciones suaves.
+    </li>
+    <li>
+        <strong>Sidechain</strong>. Si el efecto debe ser activado por la
+        intensidad de la señal de audio en otra pista que pase un cierto umbral.
+    </li>
+</ul>
+
+<p>
+    <em>ACE Expander</em> también viene con un widget en línea para los canales
+    del mezclador que muestra el nivel de la señal de entrada, el umbral y la
+    cantidad de señal reducida.
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/a-expander-inline.png"
+        alt="Display en línea de ACE Expander"
+    />
+    <figcaption>Display en línea</figcaption>
+</figure>
+
+<h2 id="ace-delay">ACE Delay</h2>
+
+<p>
+    Los efectos de delay (retardo) repiten la señal original después de un
+    intervalo definido por el usuario. En <em>ACE Delay</em>, el intervalo se
+    calcula a partir del tempo y el divisor&nbsp;&mdash; una unidad de tiempo
+    musical como una nota de 1/4 o una nota de 1/16ta con puntillo. Al usar un
+    retardo en la producción musical, generalmente es mejor sincronizarlo con el
+    tempo del proyecto, especialmente si hay cambios de tempo en una canción.
+</p>
+
+<figure>
+    <img style="width: 50%" src="/images/a-delay.png" alt="ACE Delay" />
+    <figcaption>ACE Delay</figcaption>
+</figure>
+
+<p>Los ajustes disponibles son:</p>
+
+<ul>
+    <li><strong>Tempo</strong>. Cantidad de pulsos por minuto.</li>
+    <li>
+        <strong>Sync</strong>. Activa la sincronización con el tempo del
+        proyecto.
+    </li>
+    <li>
+        <strong>Divisor</strong>. El intervalo entre el sonido original y su
+        copia retardada, expresado en notas enteras o fraccionadas (1/4, 1/8,
+        etc.).
+    </li>
+    <li>
+        <strong>Dotted</strong>. Cuando está habilitado, añade la mitad de la
+        unidad del divisor al intervalo de retardo, por ejemplo, una nota 1/8 se
+        convierte en una nota 1/8 punteada.
+    </li>
+    <li>
+        <strong>Time</strong>. El tiempo final de retardo expresado en
+        milisegundos.
+    </li>
+    <li>
+        <strong>Feedback</strong>. Cuánto de la señal procesada regresa a la
+        entrada del efecto de retardo.
+    </li>
+    <li>
+        <strong>Filtro de paso bajo (LPF)</strong>. Ayuda a simular efectos de
+        retardo analógicos donde la señal repetida se vuelve más apagada.
+    </li>
+    <li>
+        <strong>Invertir</strong>. Esta opción invierte la polaridad de la señal
+        de salida.
+    </li>
+    <li>
+        <strong>Ganancia de salida</strong>. Reduce o aumenta el nivel de la
+        señal de salida.
+    </li>
+</ul>
+
+<h2 id="ace-reverb">ACE Reverb</h2>
+
+<p>
+    Un efecto de reverberación emula las ondas sonoras reflejándose en las
+    paredes de un espacio cerrado, que podría ser una habitación pequeña o una
+    catedral. El efecto normalmente se aplica a una grabación de audio "seca",
+    es decir, una grabación realizada típicamente en una habitación muy pequeña
+    con tratamiento acústico para que haya pocas o ninguna reflexión. De esta
+    forma, el efecto de reverberación tiene más sentido, ya que ofrece una
+    página en blanco y mayor libertad para moldear el sonido.
+</p>
+
+<p>
+    El efecto <em>ACE Reverb</em> es muy sencillo, basado en las primeras
+    investigaciones sobre reverberación artificial por Manfred Schroeder y Ben
+    Logan (<a
+        href="https://ccrma.stanford.edu/~jos/pasp/Schroeder_Reverberators.html"
+        >ver aquí</a
+    >
+    para detalles técnicos). Solo hay dos controles:
+</p>
+
+<ul>
+    <li>
+        <strong>Blend</strong>. Este control cambia la mezcla a favor de la
+        señal "seca" no procesada que se introduce en el efecto o la señal
+        "húmeda" procesada por el efecto. 0 significa que solo se escucha la
+        señal no procesada, 1 significa que solo se escucha la señal procesada.
+    </li>
+    <li>
+        <strong>Tamaño de la habitación</strong>. Este control cambia el tamaño
+        de la habitación virtual y, por lo tanto, la cantidad de decadencia.
+    </li>
+</ul>
+
+<h2 id="ace-high-low-pass-filter">ACE Filtro Pasa Altos/Pasa Bajos</h2>
+
+<p>
+    Los filtros pasa-altos y pasa-bajos reducen la señal por debajo y por encima
+    de una cierta frecuencia, respectivamente. El filtro
+    <em>ACE Pasa Altos/Pasa Bajos</em> combina ambos filtros en uno solo.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/a-lpf-hpf.png"
+        alt="Pantalla del Filtro ACE Pasa Altos/Pasa Bajos"
+    />
+    <figcaption>Filtro ACE Pasa Altos/Pasa Bajos</figcaption>
+</figure>
+
+<p>Cada uno de los dos filtros pasa banda tiene tres controles:</p>
+
+<ul>
+    <li>
+        <strong>Empinamiento</strong>. Cuánto reduce el filtro la señal por cada
+        paso (de 12dB/oct a 48dB/oct). Al establecer el empinamiento en
+        <em>Desactivado</em>, se desactiva completamente el filtro.
+    </li>
+    <li>
+        <strong>Frecuencia de corte</strong>. La frecuencia base donde el filtro
+        comienza a recortar los datos.
+    </li>
+    <li>
+        <strong>Resonancia</strong>. Cuánto se suprime (valores más bajos) o
+        enfatiza (valores más altos) la señal alrededor de la frecuencia de
+        corte. El valor predeterminado del plugin es 0.707, lo cual se traduce
+        aproximadamente en "no hacer nada".
+    </li>
+</ul>
+
+<p>
+    El plugin también incluye una pantalla en línea que visualiza el efecto que
+    tienen los filtros.
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/a-lpf-hpf-inline.png"
+        alt="Pantalla en línea del filtro pasa-altos/pasa-bajos ACE"
+    />
+    <figcaption>Pantalla en línea</figcaption>
+</figure>
+
+<h2 id="ace-eq">ACE EQ</h2>
+
+<p>
+    Los ecualizadores se utilizan comúnmente para dar forma al sonido, cambiar
+    el timbre de un instrumento y, en general, ayudar a que encaje mejor en una
+    mezcla.
+</p>
+<p>
+    ACE EQ es un ecualizador simple de 4 bandas con estantes bajos y altos.
+    Todas las bandas y estantes son opcionales y se pueden deshabilitar haciendo
+    clic en el borde exterior de las cajas de los parámetros respectivos.
+</p>
+<p>
+    Para cada banda es posible establecer la frecuencia base, el nivel de
+    ganancia y el ancho de banda. Este último define qué tan afectadas están las
+    frecuencias alrededor de la frecuencia base por el ajuste de ganancia. En el
+    ejemplo a continuación, la primera banda tiene el ancho de banda más
+    estrecho de 0.1, y la tercera banda tiene el ancho de banda predeterminado
+    de 1.0. Mientras que ambas bandas tienen una ganancia de +10dB, la primera
+    es muy estrecha, pero la tercera es lo suficientemente ancha como para que
+    los cambios comiencen a afectar frecuencias que pertenecen a bandas de
+    frecuencia vecinas.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/a-eq-bandwidths.png"
+        alt="ACE EQ anchos de banda"
+    />
+    <figcaption>ACE EQ anchos de banda</figcaption>
+</figure>
+
+<p>Existen tres formas de ajustar la frecuencia, ganancia y ancho de banda:</p>
+
+<ol>
+    <li>
+        <p>
+            <strong>Directamente en el diagrama</strong>. Arrastrar la marca de
+            la banda (1 a 4) de izquierda a derecha cambia la frecuencia,
+            arrastrarla hacia arriba y hacia abajo cambia la ganancia. Desplazar
+            la rueda del ratón sobre la marca de la banda cambia el ancho de
+            banda.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>En los cuadros de parámetros inferiores</strong>. Desplazar
+            la rueda del ratón sobre un ajuste cambia su valor. Aquí también es
+            donde se puede ajustar la salida maestra.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>
+                Numéricamente a través de la interfaz genérica del
+                plugin</strong
+            >. Esta interfaz de usuario se puede mostrar haciendo clic derecho
+            sobre el plugin en el canal del mezclador y seleccionando la opción
+            <em>Editar con controles genéricos…</em>.
+        </p>
+    </li>
+</ol>
+
+<p>
+    ACE EQ también proporciona una visualización en línea para los canales del
+    mezclador:
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/a-eq-inline.png"
+        alt="Visualización en línea de ACE EQ"
+    />
+    <figcaption>Visualización en línea</figcaption>
+</figure>
+
+<h2 id="ace-notch-bank">ACE Notch Bank</h2>
+
+<p>
+    Este es un filtro armónico muy básico que suprime una cantidad de armónicos
+    (etapas) definida por el usuario, comenzando desde una frecuencia base
+    definida por el usuario. El filtro es principalmente útil como demostración
+    para el filtro bi-cuadrático incorporado en Ardour que puede usarse en
+    scripts Lua.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/ace-notch-bank.png"
+        alt="ACE Notch bank"
+    />
+    <figcaption>ACE Notch Bank</figcaption>
+</figure>
+
+<p>
+    Un ejemplo a continuación es una onda seno a 120Hz con armónicos añadidos,
+    cada uno con una magnitud menor que el anterior. Aplicando el filtro ACE
+    Notch Bank comenzando en 120Hz con 8 etapas silencia completamente la señal
+    (la línea morada para la señal procesada ni siquiera es visible):
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/ace-notch-bank-before-after.png"
+        alt="Results of applying ACE Notch Bank"
+    />
+    <figcaption>Results of applying ACE Notch Bank</figcaption>
+</figure>

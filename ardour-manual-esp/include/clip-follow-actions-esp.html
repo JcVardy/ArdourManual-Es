@@ -1,0 +1,122 @@
+<h2>Acciones de Seguimiento</h2>
+
+<p>
+    Cuando el contenido de una ranura de activación se ha reproducido un número
+    de veces definido por el usuario, Ardour puede hacer una de dos cosas:
+    detener la reproducción o cambiar a una ranura de activación diferente. Esto
+    se define mediante las acciones de seguimiento. Una acción de seguimiento
+    comúnmente utilizada es reproducir un clip en la siguiente ranura de
+    activación hacia abajo en la cuadrícula.
+</p>
+
+<p>
+    A continuación se muestran las acciones de seguimiento disponibles
+    actualmente. Ten en cuenta que, para facilitar la distinción entre ellas,
+    Ardour mostrará un icono junto al nombre de un clip en una ranura:
+</p>
+
+<table>
+    <tr>
+        <th><kbd class="menu">Ninguno</kbd></th>
+        <td width="100px">Sin icono</td>
+        <td>Reproduce el contenido de la ranura una vez y se detiene</td>
+    </tr>
+    <tr>
+        <th><kbd class="menu">Parar</kbd></th>
+        <td width="100px">
+            <img src="/images/follow-action-icons-stop.png" />
+        </td>
+        <td>
+            Se detiene después de reproducir la cantidad de veces establecida
+            con el Contador de Seguimiento o mediante la Duración de Seguimiento
+            (ver abajo)
+        </td>
+    </tr>
+    <tr>
+        <th><kbd class="menu">De Nuevo</kbd></th>
+        <td width="100px">
+            <img src="/images/follow-action-icons-again.png" />
+        </td>
+        <td>Repite el contenido de la ranura de activación una y otra vez</td>
+    </tr>
+    <tr>
+        <th><kbd class="menu">Inversa</kbd></th>
+        <td width="100px">
+            <img src="/images/follow-action-icons-reverse.png" />
+        </td>
+        <td>Reproducir y volver a la ranura de activación anterior</td>
+    </tr>
+    <tr>
+        <th><kbd class="menu">Adelante</kbd></th>
+        <td width="100px">
+            <img src="/images/follow-action-icons-forward.png" />
+        </td>
+        <td>Reproducir y pasar a la siguiente ranura de activación</td>
+    </tr>
+    <tr>
+        <th><kbd class="menu">Saltar</kbd></th>
+        <td width="100px">
+            <img src="/images/follow-action-icons-jump-cue-e.png" />&nbsp;
+            <img src="/images/follow-action-icons-jump-multi.png" />
+        </td>
+        <td>
+            Reproducir y saltar a una escena en particular. Seleccionar
+            multi-salto y múltiples ranuras de activación resultará en la
+            reproducción aleatoria de una de las ranuras seleccionadas.
+        </td>
+    </tr>
+</table>
+
+<p>
+    Ten en cuenta que la acción de seguimiento se puede configurar directamente
+    en la cuadrícula. Se logra haciendo clic en el icono que corresponde a la
+    acción de seguimiento actualmente seleccionada para una ranura y eligiendo
+    una diferente en el menú recién abierto.
+</p>
+
+<h2>Probabilidad de Acciones de Seguimiento</h2>
+
+<p>
+    Ardour puede ayudar a explorar ideas incorporando un elemento de
+    aleatoriedad. Se pueden configurar dos posibles acciones de seguimiento para
+    alternar aleatoriamente entre ellas, y luego ajustar el porcentaje de
+    probabilidad de que se active la acción de seguimiento izquierda o derecha:
+</p>
+
+<ul>
+    <li>
+        0% significa que siempre se elige la acción de seguimiento de la
+        izquierda.
+    </li>
+    <li>
+        100% significa que siempre se elige la acción de seguimiento de la
+        derecha.
+    </li>
+    <li>
+        Cualquier valor entre 0% y 50% inclinará la probabilidad hacia la acción
+        de seguimiento de la izquierda.
+    </li>
+    <li>
+        Cualquier valor entre 50% y 100% hará lo mismo con la acción de
+        seguimiento de la derecha.
+    </li>
+</ul>
+
+<h2>Duración de la Reproducción</h2>
+
+<p>
+    Aquí hay dos opciones que afectan la duración de la reproducción de una u
+    otra manera.
+</p>
+
+<p>
+    <dfn>Conteo de Seguimiento</dfn> define cuántas veces se reproducirá un clip
+    antes de activar la acción de seguimiento.
+</p>
+
+<p>
+    <dfn>Longitud de Seguimiento</dfn> anula la duración del clip y define una
+    nueva en tiempos (beats). Por defecto, coincide con la duración del clip.
+    Reducir este valor acortará el clip, mientras que aumentarlo añadirá
+    silencio al final del clip.
+</p>

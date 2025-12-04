@@ -1,0 +1,139 @@
+<figure class="right">
+    <img
+        class="mini"
+        src="/images/add-track-or-bus.png"
+        alt="el diálogo de añadir pista"
+    />
+    <figcaption>El diálogo Añadir Pista/Bus/VCA.</figcaption>
+</figure>
+
+<p>
+    Se puede añadir una pista, bus o VCA a una sesión de las siguientes maneras:
+</p>
+
+<ul>
+    <li>
+        Eligiendo
+        <kbd class="menu">Pista &gt; Añadir Pista, Bus o VCA&hellip;</kbd>
+    </li>
+    <li>
+        Haciendo clic con el <kbd class="mouse">botón derecho</kbd> en una parte
+        vacía del área de controles de pista
+    </li>
+    <li>
+        Haciendo clic en el botón <kbd class="menu">Más (&plus;)</kbd> debajo de
+        la lista de pistas en el mezclador
+    </li>
+</ul>
+<p>Cualquiera de estas acciones abrirá el diálogo Añadir Pista/Bus/VCA.</p>
+
+<p>
+    La lista de plantillas de pista disponibles (tanto las predeterminadas como
+    las creadas por el usuario) en el panel izquierdo permite elegir el
+    <a href="@@track-types">tipo de pista</a> (por ejemplo, Audio, MIDI, bus,
+    VCA, etc.). Algunas plantillas pueden hacer aún más, como la proporcionada
+    por defecto <kbd class="menu">Banda en Vivo</kbd>, que crea automáticamente
+    el número típico de pistas para una configuración común de banda. Consulta
+    <a href="@@newopen-session-dialog">Nueva Sesión</a> para más información
+    sobre las plantillas.
+</p>
+
+<p>
+    Cualquier plantilla puede ser finamente ajustada utilizando los controles en
+    el diálogo:
+</p>
+
+<table class="dl">
+    <tr>
+        <th>Agregar</th>
+        <td>Selecciona la cantidad de pistas, buses o VCAs a crear.</td>
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <td>
+            Define el nombre de la nueva pista. Si se van a crear múltiples
+            pistas, o si ya existe una pista con el mismo nombre, se añadirá un
+            espacio y un número al final (por ejemplo: Audio 1, Audio 2...).
+        </td>
+    </tr>
+    <tr>
+        <th>Configuración</th>
+        <td>
+            Este menú permite elegir entre varias plantillas de enrutamiento, lo
+            cual determina el número de puertos de entrada y, opcionalmente,
+            contiene plugins y otras configuraciones de la tira de mezcla. Las
+            opciones más comunes aquí son <em>Mono</em> y <em>Estéreo</em>.
+            Cuando se selecciona la opción <em>Personalizado</em>, al hacer clic
+            en <kbd>Agregar</kbd>, Ardour pedirá el número de canales para
+            iniciar una nueva pista de audio, bus o bus de retroalimentación.
+        </td>
+    </tr>
+    <tr>
+        <th>Instrumento</th>
+        <td>
+            Esta opción solo está disponible para pistas y buses MIDI y permite
+            la selección de un instrumento predeterminado de la lista de plugins
+            disponibles.
+        </td>
+    </tr>
+    <tr>
+        <th>Grupo</th>
+        <td>
+            Las pistas y buses pueden asignarse a grupos para que un rango
+            seleccionado de operaciones se aplique a todos los miembros del
+            grupo al mismo tiempo (por ejemplo, habilitar grabación o edición).
+            Esta opción asigna la nueva pista/bus a un grupo existente o crea un
+            nuevo grupo.
+        </td>
+    </tr>
+    <tr>
+        <th>Modo de Pin</th>
+        <td>
+            Define cómo responde el número de salidas al agregar un plugin con
+            un número de salidas diferente al de la pista misma. En el modo
+            <em>Entrada/Salida estricta</em>, los plugins no pueden alterar el
+            número de canales de la pista, mientras que en el modo
+            <em>Entrada/Salida flexible</em>, se adaptará automáticamente a las
+            entradas y salidas de sus plugins. Consulta
+            <a href="@@trackbus-signal-flow">Flujo de señal</a> para más
+            detalles.
+        </td>
+    </tr>
+    <tr>
+        <th>Posición</th>
+        <td>
+            Define dónde se creará la pista en la lista de pistas. El valor
+            predeterminado es <em>Última</em>, es decir, después de todas las
+            pistas y buses, y también puede ser <em>Primera</em>,
+            <em>Antes de la selección</em> (para colocarla justo encima de la
+            pista seleccionada) o <em>Después de la selección</em>.
+        </td>
+    </tr>
+</table>
+
+<p>
+    Se pueden crear varias pistas de diferentes tipos utilizando el botón
+    <kbd class="menu"
+        >Agregar elementos seleccionados (y dejar el diálogo abierto)</kbd
+    >, que, al usarse junto con el campo <kbd class="menu">Agregar</kbd>,
+    permite una forma muy rápida y eficiente de crear una configuración inicial
+    de pistas.
+</p>
+
+<p>
+    Las nuevas pistas aparecen tanto en la ventana del editor como en la del
+    mezclador. La ventana del editor muestra la línea de tiempo, con los datos
+    grabados, y el mezclador muestra solo los elementos de procesamiento de la
+    pista (sus plugins, fader, etc).
+</p>
+
+<h2>Eliminar Pistas y Buses</h2>
+
+<p>
+    <dfn>Eliminar</dfn> pistas y buses se realiza seleccionándolos, haciendo
+    <kbd class="mouse">clic derecho</kbd> y eligiendo
+    <kbd class="menu">Eliminar</kbd>
+    en el menú. Aparecerá un cuadro de advertencia pidiendo confirmación, ya que
+    la eliminación de la pista no se puede deshacer; ¡esta opción debe usarse
+    con cuidado!
+</p>

@@ -1,0 +1,565 @@
+<figure class="right">
+    <img src="/images/mixer-1-strip-numbered.png" alt="Una tira de mezclador" />
+    <figcaption>Una tira de mezclador</figcaption>
+</figure>
+<p>
+    Una <dfn>tira de mezclador</dfn> en Ardour es una vista vertical de la
+    pista, desde el punto de vista de la mezcla. Esta vista es conveniente para
+    tratar con E/S, efectos, paneo/mudos, ganancia, etc... Tiene un flujo
+    general de "arriba hacia abajo".
+</p>
+
+<p>La tira de mezclador se desglosa en:</p>
+
+<ol>
+    <li>Ecabezado</li>
+    <li>Nombre de la pista</li>
+    <li>Entrada(s)</li>
+    <li>Polaridad <em>sólo para pistas de audio</em></li>
+    <li>Caja de procesadores</li>
+    <li>Paneo</li>
+    <li>Opciones de grabación</li>
+    <li>Mudo/Solo</li>
+    <li>Medidor de ganancia &amp;</li>
+    <li>Control maestro</li>
+    <li>Automatización del fader/grupo de mezcla/punto de medición</li>
+    <li>Salida(s)</li>
+    <li>Comentarios</li>
+</ol>
+
+<h2>Encabezados</h2>
+
+<p>
+    En la parte superior de la ventana, están las
+    <a href="@@the-track-and-bus-group-list">pestañas de grupo</a> (aquí,
+    <em>recm&hellip;</em>). Esto permite agrupar las pistas para tener controles
+    comunes.
+</p>
+
+<p>Debajo hay 3 botones:</p>
+
+<ul>
+    <li>
+        El botón de las dobles flechas permite reducir/ampliar el ancho de la
+        tira.
+        <kbd class="mod1n"></kbd><kbd class="mod3n"></kbd>
+        <kbd class="mouse">Hacer clic</kbd> en el botón reducirá/ampliará todas
+        las pistas a la vez.
+    </li>
+    <li>La barra de color muestra el color de la pista en el editor.</li>
+    <li>
+        El botón <kbd class="menu">X</kbd> alterna la visibilidad de la pista a
+        DESACTIVADA. Para volver a activarla, se puede ir a la
+        <a href="@@the-tracks-and-busses-list">lista de Pistas y Buses</a> en la
+        vista del Editor y marcar la columna "V" en la línea de la pista, o
+        permanecer en la vista de Mezclador y marcar la columna
+        <kbd class="menu">Mostrar</kbd> de esta tira en la
+        <a href="@@strips-list">lista de tiras</a>.
+    </li>
+</ul>
+
+<p>
+    <kbd class="mouse">Clic derecho</kbd> en la barra de color abrirá un menú
+    contextual, que es exactamente el mismo que al hacer clic en el botón del
+    nombre de la pista.
+</p>
+
+<h2>Nombre de la Pista</h2>
+
+<p>Hacer clic en el botón del nombre de la pista abrirá un menú:</p>
+
+<table class="dl">
+    <tr>
+        <th>Color&hellip;</th>
+        <td>Cambia el color de la tira/pista</td>
+    </tr>
+    <tr>
+        <th>Comentarios&hellip;</th>
+        <td>
+            Muestra un editor para agregar comentarios sobre la pista, ver más
+            abajo el botón de Comentarios
+        </td>
+    </tr>
+    <tr>
+        <th>Entradas&hellip;</th>
+        <td>
+            Muestra la cuadrícula de enrutamiento para las entradas de la pista
+        </td>
+    </tr>
+    <tr>
+        <th>Salidas&hellip;</th>
+        <td>
+            Muestra la cuadrícula de enrutamiento para las salidas de la pista
+        </td>
+    </tr>
+    <tr>
+        <th>Guardar como plantilla&hellip;</th>
+        <td>
+            Permite guardar la pista sin su contenido de medios
+            (entradas/salidas, efectos,&hellip;) para su reutilización posterior
+        </td>
+    </tr>
+    <tr>
+        <th>Renombrar&hellip;</th>
+        <td>
+            Cambia el nombre de la pista (afectando tanto al Mezclador como al
+            Editor)
+        </td>
+    </tr>
+    <tr>
+        <th><kbd class="option">Activo</kbd></th>
+        <td>
+            Selecciona el estado activo de la pista. Una pista inactiva no
+            emitirá ningún sonido
+        </td>
+    </tr>
+    <tr>
+        <th><kbd class="option">E/S estricta</kbd></th>
+        <td>
+            Mientras está en modo
+            <a href="@@trackbus-signal-flow">E/S estricta</a>, una pista
+            <em>siempre</em> tiene tantas salidas como entradas, sin importar
+            los efectos. Cuando está deshabilitado, un efecto estéreo en una
+            pista mono resultará en una salida estéreo para la tira.
+        </td>
+    </tr>
+    <tr>
+        <th>E/S de disco</th>
+        <td>
+            Este submenú permite cambiar entre la grabación de señal pre-fader,
+            post-fader o con posiciones personalizadas de grabación y
+            reproducción. Solo disponible para pistas.
+        </td>
+    </tr>
+    <tr>
+        <th>Conexiones de pines&hellip;</th>
+        <td>
+            Muestra la ventana de
+            <kbd class="menu">Configuración de pines</kbd>, que permite
+            visualizar (y modificar) todos los flujos de señal dentro de la
+            pista. Solo disponible para pistas y buses con al menos un
+            procesador en la tira de mezcla.
+        </td>
+    </tr>
+    <!-- <tr>
+        <th>Ajustar latencia&hellip;</th>
+        <td>
+            Muestra el cuadro de diálogo <kbd class="menu">Latencia de pista</kbd>,
+            que permite ajustar con precisión la latencia de la pista en muestras,
+            milisegundos o períodos.
+        </td>
+    </tr>
+ -->
+    <tr>
+        <th>Selector de parche&hellip;</th>
+        <td>
+            Abre un cuadro de diálogo para seleccionar un parche proporcionado
+            por MIDNAM. Solo disponible para pistas MIDI.
+        </td>
+    </tr>
+    <tr>
+        <th>Distribuir a buses&hellip;</th>
+        <td>
+            Crea un bus por cada salida de un instrumento virtual y los conecta
+            a los buses creados. Solo disponible para pistas MIDI donde un
+            instrumento virtual tenga más de dos salidas de audio.
+        </td>
+    </tr>
+
+    <tr>
+        <th>Distribuir a pistas&hellip;</th>
+        <td>
+            Crea una pista por cada salida de un instrumento virtual y las
+            conecta a las pistas creadas. Solo disponible para pistas MIDI donde
+            un instrumento virtual tenga más de dos salidas de audio.
+        </td>
+    </tr>
+    <tr>
+        <th><kbd class="option">Proteger contra denormales</kbd></th>
+        <td>
+            Usa un truco para eliminar los <em>denormales</em>, que son números
+            muy pequeños con los que la CPU puede tener dificultades para
+            procesar. Se recomienda su uso si el consumo de CPU de los
+            complementos es notablemente más alto de lo esperado.
+        </td>
+    </tr>
+    <tr>
+        <th>Duplicar&hellip;</th>
+        <td>
+            Copia la pista a una nueva, opcionalmente con su lista de
+            reproducción
+        </td>
+    </tr>
+    <tr>
+        <th>Eliminar</th>
+        <td>Borra la pista y su lista de reproducción</td>
+    </tr>
+</table>
+
+<h2>Entradas</h2>
+
+<p>
+    El botón desplegable muestra el puerto(s) de entrada actual, es decir, lo
+    que está conectado a la "entrada" de la pista. Por defecto, cada pista de
+    audio está conectada a las entradas del sistema, lista para grabar, como lo
+    indican los números. Al hacer clic en el botón desplegable de Entradas, se
+    podrá cambiar las entradas, a través de un menú:
+</p>
+
+<table class="dl">
+    <tr>
+        <th>Desconectar</th>
+        <td>Desconecta todo, es decir, la pista no tiene entrada</td>
+    </tr>
+    <tr>
+        <th>En <em>n</em></th>
+        <td>
+            Esas son las entradas del sistema, por ejemplo, para grabar desde la
+            tarjeta de sonido. Una pista mono tendrá <em>In 1</em> y
+            <em>In 2</em> separadas, mientras que una pista estéreo puede tener
+            <em>In 1+2</em>
+        </td>
+    </tr>
+    <tr>
+        <th><em>Salida de la pista n</em></th>
+        <td>
+            Todas las salidas de las pistas compatibles, por ejemplo, una pista
+            mono solo puede recibir una señal mono, una pista MIDI solo puede
+            recibir señal MIDI, &hellip;
+        </td>
+    </tr>
+    <tr>
+        <th>Agregar puerto de audio</th>
+        <td>
+            Agrega una entrada de audio a la pista, es decir, una pista mono se
+            convierte en una pista estéreo
+        </td>
+    </tr>
+    <tr>
+        <th>Agregar puerto MIDI</th>
+        <td>
+            Agrega una entrada MIDI a la pista. Agregarlo a una pista de audio
+            la convierte en una pista mixta de Audio/MIDI. Esto puede ser útil,
+            por ejemplo, para alimentar algunos plugins con una señal MIDI para
+            controlar el audio, como un vocoder.
+        </td>
+    </tr>
+    <tr>
+        <th>Cuadrícula de enrutamiento</th>
+        <td>
+            Muestra la ventana de
+            <a href="@@patchbay"
+                ><kbd class="menu">Cuadrícula de enrutamiento</kbd></a
+            >, que permite una configuración de entrada más compleja.
+        </td>
+    </tr>
+</table>
+
+<p>
+    La <kbd class="menu">Cuadrícula de enrutamiento</kbd> también se puede
+    mostrar al hacer clic derecho en el botón desplegable de entradas. Permite
+    realizar las conexiones a través de una matriz y conectar cosas que no están
+    listadas en el menú anterior, o conectar a múltiples fuentes a la vez,
+    reducir el número de entradas, etc...
+</p>
+
+<p>
+    En las pistas de audio, hay un control de ganacia de entrada (Trim), como en
+    las consolas tradicionales. Ajusta el nivel base de entrada para la pista,
+    evitando cualquier distorsión. Ten en cuenta que recorta tanto cualquier
+    entrada, como (al reproducir), también el nivel de la lista de reproducción
+    como se muestra en el Editor. Tiene sentido, ya que mientras se reproduce,
+    la entrada de la pista es la lista de reproducción, sobre la que actúa la
+    tira del mezclador.
+</p>
+
+<p>
+    En las pistas MIDI, se reemplaza por un botón de Entrada MIDI, que
+    permite/no permite la entrada MIDI en la pista.
+</p>
+
+<h2>Polaridad</h2>
+
+<p>
+    Solo en las pistas de audio, el botón de Polaridad (1 por entrada) permite
+    invertir la señal, es decir, un valor negativo se volverá positivo y
+    viceversa. Esto puede ayudar a resolver problemas de fase.
+</p>
+
+<h2 id="audio-midi-processor-box">Caja de procesadores</h2>
+
+<p>
+    La caja de procesadores es donde se agregan los efectos. Por defecto,
+    siempre hay un efecto presente: el Fader (ver más abajo). Los efectos pueden
+    ser añadidos <em>antes</em> del fader y aparecerán en marrón, o
+    <em>después</em> del fader, donde aparecerán en verde oscuro. El flujo de
+    señal está representado por líneas, rojas para el MIDI y verdes para el
+    audio.
+</p>
+
+<p>
+    También es donde provienen los <a href="@@aux-sends">Envíos</a>, ya sean
+    externos o auxiliares.
+</p>
+
+<p>
+    Para aprender más sobre la caja de procesadores, consulta
+    <a href="@@processor-box">La Caja de Procesadores</a>.
+</p>
+
+<h2>Paneador</h2>
+
+<p>
+    El <dfn>Paneador</dfn> muestra visualmente cómo se distribuirá el sonido
+    entre las diferentes salidas. Se verá y comportará de manera diferente si la
+    pista es mono, estéreo o tiene múltiples canales.
+</p>
+
+<p>Hacer clic derecho en el Paneador mostrará un menú:</p>
+
+<table class="dl">
+    <tr>
+        <th><kbd class="option">Bypass</kbd></th>
+        <td>
+            Cuando está marcado, el paneador se vuelve gris y la señal no se ve
+            afectada por él.
+        </td>
+    </tr>
+    <tr>
+        <th>Restablecer</th>
+        <td>
+            Restablece el paneador a sus ajustes predeterminados, por ejemplo,
+            para una señal mono, se centra.
+        </td>
+    </tr>
+    <tr>
+        <th>Editar&hellip;</th>
+        <td>
+            Muestra un diálogo de <kbd class="menu">Paneador</kbd>, que permite
+            ajustar finamente el paneador.
+        </td>
+    </tr>
+</table>
+
+<p>
+    Consulta <a href="@@panning">Paneo</a> para aprender más sobre cómo
+    controlar el paneador y qué tipo de panners están disponibles dentro de
+    Ardour.
+</p>
+
+<h2>Opciones de grabación</h2>
+
+<p>
+    El botón más notable aquí es el de Habilitar grabación, con un círculo rojo.
+    Cuando está habilitado, la próxima vez que se arme la grabación global y se
+    inicie la reproducción, todo lo que provenga de la entrada de la pista será
+    grabado. Haciendo clic derecho en un botón de grabación deshabilitado
+    permite habilitar
+    <kbd class="menu">Rec-Safe</kbd>, protegiendo así la pista contra
+    grabaciones accidentales.
+</p>
+
+<p>
+    Los botones a la derecha, <kbd class="menu">In</kbd> y
+    <kbd class="menu">Disk</kbd>, muestran lo que el usuario está escuchando al
+    iluminarse, entre la entrada <em>In</em> y el contenido real de la lista de
+    reproducción en <em>Disk</em>.
+</p>
+
+<p>
+    También permiten anular el cambio automático al presionarlos para bloquear
+    una fuente u otra como lo que el usuario está escuchando.
+</p>
+
+<h2>Mudo/Solo</h2>
+
+<p>
+    Estos botones permiten enmudecer (o silenciar) la pista, o ponerla en Solo,
+    desactivando el volumen de las otras pistas (por defecto completamente, se
+    puede configurar para que sea parcialmente en las opciones). Consulta
+    <a href="@@muting-and-soloing">Enmudecer y Poner en Solo</a> para más
+    información.
+</p>
+
+<p>
+    Ten en cuenta que por defecto, Solo anula Mudo, es decir, si una pista está
+    tanto en Solo como en Mudo, se reproducirá. Esto se puede cambiar en las
+    preferencias.
+</p>
+
+<p>Los dos botones LED de arriba están relacionados con el solo:</p>
+
+<ul>
+    <li>
+        Solo Aislar, como su nombre indica, aísla las pistas o buses del sistema
+        de solo. Cuando se ponen en solo las pistas o buses, los aislados no se
+        silenciarán.
+    </li>
+    <li>
+        Bloquear Solo bloquea el solo en su estado actual (es decir, solo
+        activado o solo desactivado). No permitirá que el estado de solo se
+        cambie hasta que se libere el bloqueo.
+    </li>
+</ul>
+
+<h2>Gain &amp; Meter</h2>
+
+<h2>Ganancia y Medidor</h2>
+
+<p>
+    A la derecha de esta parte hay un
+    <a href="@@metering-in-ardour">Medidor</a>, que muestra el nivel de salida
+    de la pista después del fader. Puede configurarse para mostrar la señal en
+    cualquier punto, ver más abajo <em>Punto de Medición</em>. Haciendo clic
+    derecho sobre este medidor se abre un menú que permite cambiar el tipo de
+    medidor.
+</p>
+
+<p>
+    El gran deslizador de Ganancia a la izquierda permite cambiar la ganancia de
+    la pista. Su valor predeterminado de 0dB está indicado con una línea
+    horizontal blanca, y su valor preciso se muestra en un campo de texto encima
+    de él, que también sirve para escribir un valor numérico.
+</p>
+
+<p>
+    El campo de texto encima del medidor muestra el "Pico", es decir, el valor
+    máximo que se ha alcanzado durante la reproducción. Para evitar
+    distorsiones, el valor debe mantenerse por debajo de 0dB, y si supera este
+    valor, el campo de texto se pondrá rojo. Hacer clic en este campo
+    restablecerá el valor del Pico (para una nueva medición o una nueva parte de
+    la pista).
+</p>
+
+<p class="note">
+    Nota: Si se ha configurado alguna automatización de ganancia y el estado de
+    la automatización está configurado en "Reproducir" (ver más abajo), entonces
+    el fader de Ganancia está controlado por la automatización y no por el
+    usuario. El fader de Ganancia se pondrá gris para indicar que está inactivo.
+</p>
+
+<h2>VCAs</h2>
+
+<p>
+    Si existe al menos un <a href="@@control-masters-mixer-strips">VCA</a>, este
+    botón aparecerá, permitiendo al usuario vincular esta pista a cualquier
+    controlador maestro.
+</p>
+
+<p>
+    Al hacer clic en el botón, se listan todos los controladores maestros
+    disponibles, junto con una opción del menú para
+    <kbd class="menu">Desvincular todos</kbd>. Ten en cuenta que una pista puede
+    ser esclava de tantos VCAs como existan en la sesión, por lo que el número
+    de botones VCA puede multiplicarse. El número que se muestra es el número
+    del VCA, no la cantidad de VCAs vinculados a la pista. Una pista sin VCA
+    asignado mostrará un botón único con la etiqueta "<kbd class="menu"
+        >-vca-</kbd
+    >" en lugar de este número.
+</p>
+
+<h2>Automatización del fader/grupo de mezcla/punto de medición</h2>
+
+<h3>Modo de automatización del fader</h3>
+
+<p>
+    Este botón permite elegir el modo que se utiliza respecto a la
+    automatización:
+</p>
+
+<table class="dl">
+    <tr>
+        <th>Manual</th>
+        <td>
+            <em>(predeterminado)</em> La reproducción no utilizará los datos de
+            automatización del fader
+        </td>
+    </tr>
+    <tr>
+        <th>Reproducir</th>
+        <td>
+            Habilita la reproducción/uso de los datos de automatización del
+            fader
+        </td>
+    </tr>
+    <tr>
+        <th>Escribir</th>
+        <td>
+            Mientras el transporte esté en marcha, todos los cambios del fader
+            se grabarán en la pista de automatización del fader
+        </td>
+    </tr>
+    <tr>
+        <th>Tocar</th>
+        <td>
+            Mientras el transporte esté en marcha, tocar el fader iniciará la
+            grabación de todos los cambios del fader hasta que se suelte. Cuando
+            el fader no esté siendo tocado, se reproducirán/utilizarán los datos
+            de automatización existentes para controlar el nivel de ganancia.
+        </td>
+    </tr>
+</table>
+
+<h3>Grupo de mezcla</h3>
+
+<p>
+    Este botón muestra la información del grupo de mezcla, al igual que la
+    pestaña en el encabezado (ver arriba). Es conveniente, ya que permite
+    cambiar rápidamente la pista de un grupo a otro con un menú desplegable,
+    además de permitir asignar la pista a un grupo no adyacente (lo cual no es
+    fácil de hacer con la pestaña).
+</p>
+
+<h3>Punto de medición</h3>
+
+<p>
+    La medición mostrada en el medidor es, por defecto, 'Post', es decir,
+    después del fader. Este valor puede cambiarse con este botón a cualquier
+    punto del flujo de señal:
+</p>
+
+<table class="dl">
+    <tr>
+        <th>In</th>
+        <td>La entrada de la pista</td>
+    </tr>
+    <tr>
+        <th>Pre</th>
+        <td>Antes del fader</td>
+    </tr>
+    <tr>
+        <th>Post</th>
+        <td>Después del fader</td>
+    </tr>
+    <tr>
+        <th>Out</th>
+        <td>La salida de la pista</td>
+    </tr>
+    <tr>
+        <th>Personalizado</th>
+        <td>
+            Se agrega un procesador de <em>Medidor</em> al cuadro de
+            procesadores y se puede colocar en cualquier punto (arrastrando y
+            soltando) para sondear el flujo de señal en ese lugar
+        </td>
+    </tr>
+</table>
+
+<h2>Output(s)</h2>
+
+<h2>Salida(s)</h2>
+
+<p>
+    Este botón es exactamente igual al botón de <em>Entrada</em>, pero se aplica
+    a la <em>salida</em> de la pista.
+</p>
+
+<h2>Comentarios</h2>
+
+<p>
+    Estos botones abren un pequeño editor de texto, que se puede usar para
+    agregar algunas notas escritas a la pista, como, por ejemplo, una
+    configuración particular. El texto del botón se reemplaza por el comienzo
+    del texto, por lo que puede ser utilizado como un "sub" nombre para la
+    pista.
+</p>

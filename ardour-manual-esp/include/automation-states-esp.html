@@ -1,0 +1,69 @@
+<p>
+    Para entender cómo funciona la automatización en Ardour, es necesario
+    comprender los cinco estados de automatización. Son:
+    <kbd class="menu">Manual</kbd>, <kbd class="menu">Reproducir</kbd>,
+    <kbd class="menu">Escribir</kbd>, <kbd class="menu">Toque</kbd>, y
+    <kbd class="menu">Latch</kbd>.
+</p>
+
+<figure class="right">
+    <img src="/images/automation-modes1.png" />
+    <figcaption class="center">
+        El menú de estados de automatización.
+    </figcaption>
+</figure>
+
+<p>
+    El estado <kbd class="menu">Manual</kbd> es básicamente análogo al
+    interruptor de bypass de un procesador. Siempre que un carril de
+    automatización esté en este estado, está inactiva y cualquier nivel que se
+    ajuste manualmente para controlar el parámetro de la pista persistirá
+    durante la reproducción como de costumbre.
+</p>
+
+<p class="note">
+    En Ardour, cada pista y parámetro de procesador está inicialmente
+    configurado en el estado <kbd class="menu">Manual</kbd>.
+</p>
+
+<p>
+    El estado <kbd class="menu">Reproducir</kbd> le indica a Ardour que use la
+    curva de automatización en el carril de automatización para controlar el
+    nivel del parámetro controlado por el carril
+    <em>dentro de la reproducción</em>. El control que normalmente ajusta el
+    parámetro será <em>no receptivo a entradas manuales</em> y se moverá
+    automáticamente de acuerdo con la curva de automatización del carril durante
+    la reproducción.
+</p>
+
+<p>
+    El estado <kbd class="menu">Escribir</kbd> permite la configuración continua
+    y dinámica de un control durante la reproducción; todos esos ajustes se
+    escriben en el carril en la que se encuentra el control. Esto define la
+    curva de automatización del carril en el intervalo que se está reproduciendo
+    y sobrescribe cualquier curva de automatización existente en el carril que
+    se esté manipulando. Como esto puede ser peligroso en ocasiones, este estado
+    se cambia automáticamente al estado <kbd class="menu">Tocar</kbd> cuando se
+    detiene la reproducción.
+</p>
+
+<p>
+    El estado <kbd class="menu">Tocar</kbd> es similar al estado
+    <kbd class="menu">Escribir</kbd>, excepto que solo sobrescribe secciones de
+    la curva de automatización de un carril cuando el control se cambia de
+    alguna manera. Esto permite cambiar solo las partes de una curva de
+    automatización que se deseen cambiar, mientras que el resto se deja sin
+    cambios.
+</p>
+
+<p>
+    El estado <kbd class="menu">Latch</kbd> es similar al estado
+    <kbd class="menu">Tocar</kbd>, ya que también cambiará la automatización
+    cuando el control se cambie de alguna manera durante la reproducción de la
+    sesión. Pero, adicionalmente, sobrescribirá la curva de automatización con
+    el último valor al que se haya cambiado hasta que se detenga la
+    reproducción.<br />
+    El estado Latch también es útil cuando el usuario desea un comportamiento
+    similar al de "Tocar" pero está utilizando un dispositivo incapaz de enviar
+    mensajes para indicar el inicio y el final del "toque".
+</p>

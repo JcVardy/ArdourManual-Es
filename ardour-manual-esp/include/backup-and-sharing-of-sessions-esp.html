@@ -1,0 +1,97 @@
+
+<p>
+  Una sesión de Ardour se guarda en una sola carpeta en el sistema de archivos del
+  ordenador. Esto facilita enormemente las <dfn>copias de seguridad</dfn>: cualquier herramienta
+  capaz de hacer copias de seguridad de una carpeta puede utilizarse para respaldar una sesión.
+  La ubicación de la sesión se elige cuando se crea —por defecto estará en la ubicación predeterminada
+  de sesiones, la cual se puede modificar desde <kbd class="menu">Editar &gt; Preferencias &gt; General &gt;
+  Sesión</kbd>.
+</p>
+<p>
+  El enfoque de una sola carpeta también facilita compartir un proyecto. Simplemente copia la
+  carpeta de la sesión (en un dispositivo de almacenamiento o a través de una red) y otro usuario
+  de Ardour (en cualquier plataforma) podrá utilizarla.
+</p>
+
+<p>
+  Hay una complicación en ambos casos: una sesión puede hacer referencia a archivos de medios
+  que están almacenados fuera de la carpeta de la sesión, si el usuario optó por no seleccionar
+  <kbd class="optoff">Sesión &gt; Importar &gt; Copiar a la sesión</kbd> durante la importación.
+  Hacer una copia de seguridad de una sesión con archivos incrustados no creará una copia de la sesión
+  que contenga esos archivos. Para traer esos archivos externos a la carpeta de la sesión,
+  se puede usar el menú <a href="@@cleaning-up-sessions"><kbd class="menu">Sesión &gt; Limpiar &gt;
+  Traer todos los medios a la carpeta de la sesión</kbd></a>.
+</p>
+
+<h2>Usando la herramienta dedicada de Comprimir/Archivar la Sesión Actual</h2>
+
+<figure>
+  <img src="/images/archive-session.png" alt="La ventana Comprimir/Archivar la Sesión Actual">
+  <figcaption>
+    La ventana Comprimir/Archivar la Sesión Actual
+  </figcaption>
+</figure>
+
+<p>
+  La herramienta <kbd class="menu">Comprimir/Archivar la Sesión Actual</kbd> se encuentra en el
+  menú <kbd class="menu">Archivo &gt; Archivar&hellip;</kbd>.
+</p>
+<p>
+  Permite crear un solo archivo que contenga todo lo útil de la sesión,
+  para compartirlo o respaldarlo, convenientemente comprimido en un archivo de archivo de sesión,
+  que es un archivo zip (tar.xz para ser específicos) que contiene todo el audio, MIDI,
+  configuraciones de plugins,... y la sesión activa actualmente. Ardour también puede extraer
+  esos archivos comprimidos (<kbd class="menu">Sesión &gt; Abrir&hellip;</kbd>).
+</p>
+<p>
+  A diferencia de comprimir la carpeta completa de la sesión manualmente,
+</p>
+<ol>
+  <li>el archivo de sesión comprimido solo contiene la instantánea de la sesión actual y solo
+    los archivos que están en uso.</li>
+  <li>Los archivos referenciados externamente se incluyen en el archivo comprimido.</li>
+</ol>
+
+
+</p>
+
+<p>
+  La ventana muestra las siguientes opciones:
+</p>
+<table class="dl">
+  <tr><th><dfn>Nombre del archivo</dfn></th><td>El nombre del archivo de archivo, que por defecto es
+  el nombre de la sesión seguido de la fecha y hora.</td></tr>
+  <tr><th>Selector desplegable de extensión</th><td>Permite elegir entre diferentes tipos de archivos de
+  archivo comprimido.</td></tr>
+  <tr><th><dfn>Directorio/carpeta de destino</dfn></th><td>Define en qué ubicación del sistema de archivos
+  se generará el archivo comprimido.</td></tr>
+  <tr><th><dfn>Compresión de audio</dfn></th><td>Un menú desplegable que permite comprimir los archivos de
+  audio utilizando un formato de compresión específico para audio. Más información sobre esto a continuación.</td></tr>
+  <tr><th><dfn>Excluir fuentes de audio no utilizadas</dfn></th><td>Una casilla de verificación que permite
+  descartar todo el audio que está en la sesión pero que no se usa realmente en el editor.</td></tr>
+</table>
+
+
+<p>
+  La selección de <kbd class="menu">Compresión de audio</kbd> acepta cualquiera de las siguientes opciones:
+</p>
+<ul>
+  <li>Ninguna</li>
+  <li>FLAC 16 bits</li>
+  <li>FLAC 24 bits</li>
+</ul>
+<p>
+  Codificar las fuentes de audio en <abbr title="Free Lossless Audio Codec">FLAC</abbr> permite una buena reducción del tamaño de la sesión.
+  Sin embargo, es importante señalar que FLAC es un formato de punto fijo, lo que significa que si el
+  audio en la sesión está en formato de punto flotante, esta conversión perderá
+  algo de información en los valores de las muestras debido al redondeo, aunque normalmente
+  esta pérdida de información no es perceptible. Elegir "<em>Ninguna</em>" en la opción de
+  Compresión de audio no comprime el audio a FLAC, preservando así los datos en punto flotante
+  a costa de un mayor tamaño de archivo. También hay que tener en cuenta que convertir a FLAC
+  normaliza automáticamente el audio.
+</p>
+<p>
+  Usar la opción <kbd class="option">Excluir fuentes de audio no utilizadas</kbd>
+  permite conservar únicamente los archivos realmente usados en la sesión, lo que puede ser útil
+  para descartar tomas no utilizadas o material de referencia, reduciendo así el tamaño total del archivo comprimido.
+</p>

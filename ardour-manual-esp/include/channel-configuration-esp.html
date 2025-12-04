@@ -1,0 +1,41 @@
+<p>
+    Las pistas de Ardour pueden tener cualquier número de entradas y cualquier
+    número de salidas, y el número de ambas puede cambiarse en cualquier momento
+    (con restricciones impuestas por los plugins en la pista). Sin embargo, es
+    útil no tener que configurar esto manualmente en los casos más comunes, por
+    lo que el diálogo
+    <a href="@@adding-tracks-busses-and-vcas">Añadir pistas</a> permite
+    seleccionar "Mono", "Estéreo" y algunos otros preajustes multicanal típicos.
+</p>
+<p>
+    El nombre del preajuste describe el número de <dfn>canales de entrada</dfn>
+    de la pista o bus.
+</p>
+<p>
+    Si Ardour está configurado para conectar automáticamente nuevas pistas y
+    buses, el número de salidas se determinará según el número de entradas del
+    <dfn
+        >bus
+        <a href="@@understanding-basic-concepts-and-terminology#busses"
+            >maestro</a
+        ></dfn
+    >, al cual se conectarán las salidas de la pista.
+</p>
+<p>
+    Por ejemplo, con un bus maestro de dos canales, una pista Mono tiene una
+    entrada y dos salidas; una pista Estéreo tiene dos entradas y dos salidas.
+</p>
+<p class="note">
+    Si la opción
+    <kbd class="menu"
+        >Editar &gt; Preferencias &gt; Flujo de Señal &gt; Conexiones de Pistas
+        y Buses</kbd
+    >
+    está configurada en <kbd class="menu">manual</kbd>, entonces las pistas
+    quedarán desconectadas por defecto y tendrán tantas salidas como entradas.
+    Corresponde al usuario conectarlas según lo desee. Este método de trabajo no
+    es particularmente útil, a menos que se realice un enrutamiento y
+    procesamiento de señal inusual. Casi siempre es preferible dejar que Ardour
+    haga las conexiones automáticamente, incluso si se realizan algunos cambios
+    manualmente más tarde.
+</p>

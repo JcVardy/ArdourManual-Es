@@ -1,0 +1,39 @@
+<p>
+    Ardour ofrece dos modos para interpolar los puntos de control de la
+    automatización: <kbd class="menu">Linear</kbd> y
+    <kbd class="menu">Discrete</kbd>. El modo se cambia mediante un
+    <kbd class="mouse">clic derecho</kbd> en el encabezado de la pista de
+    automatización y eligiendo el modo desde el menú de modos.
+</p>
+
+<figure>
+    <img src="/images/automation-linear.png" alt="Automatización - lineal" />
+    <img
+        src="/images/automation-discrete.png"
+        alt="Automatización - discreta"
+    />
+    <figcaption>Automatización: lineal vs discreta.</figcaption>
+</figure>
+
+<p>
+    El modo <kbd class="menu">Linear</kbd> interpola los valores entre los
+    puntos de control en una curva de automatización dada conectándolos con
+    líneas rectas; los valores reproducidos se derivan de los puntos que caen
+    sobre las líneas definidas de esta manera. Normalmente, esto es lo que se
+    desea y es el modo predeterminado para todas las pistas de automatización.
+</p>
+
+<p>
+    El modo <kbd class="menu">Discreto</kbd> <em>no</em> interpola entre los
+    puntos de control en una curva de automatización dada. Los valores
+    establecidos por los puntos de control no cambian hasta que se alcanza el
+    siguiente punto de control, momento en el cual el valor se establece en su
+    nuevo valor; esto continúa hasta que no haya más puntos de control.
+    Normalmente, esto se usa para parámetros como el mudo o el pedal de sustain
+    (por ejemplo, en una pista MIDI de piano).
+</p>
+
+<p class="note">
+    Al grabar automatización a través de MIDI (por ejemplo, el pitch bend desde
+    un teclado MIDI), Ardour siempre usa el modo discreto.
+</p>

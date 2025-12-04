@@ -1,0 +1,86 @@
+<p>
+    El <dfn>Administrador de Paquetes</dfn> simplifica la conexión de canales de
+    entrada/salida en casos donde los instrumentos/micrófonos de propósito
+    similar están dispersos a través de una interfaz de audio multicanal. Un
+    escenario común es grabar una batería con 6 micrófonos. Si necesitas volver
+    a enrutar los micrófonos en la sesión, en lugar de conectar cada uno de
+    ellos por separado, puedes crear un paquete y conectar solo el paquete.
+</p>
+<p>
+    Los paquetes pueden ser creados tanto para fuentes (por ejemplo, entradas de
+    micrófono) como para destinos (por ejemplo, monitores de estudio). Puedes
+    crear tantos paquetes como desees.
+</p>
+
+<figure>
+    <img
+        src="/images/bundle-manager-main-window.png"
+        alt="Ventana principal del Administrador de Paquetes"
+    />
+    <figcaption>Ventana principal del Administrador de Paquetes</figcaption>
+</figure>
+
+<h2>Crear un paquete</h2>
+
+<p>
+    Haz clic en el botón <kbd class="menu">Nuevo</kbd> para crear un nuevo
+    paquete. En el cuadro de diálogo recién abierto, asigna un nombre, elige si
+    deseas que este sea un paquete de canales de fuente o de destino, y luego
+    conecta los puertos que deseas recopilar en el puerto del paquete.
+</p>
+
+<figure>
+    <img
+        src="/images/bundle-manager-connection-setup.png"
+        alt="Configuración de conexión del Administrador de Paquetes"
+    />
+    <figcaption>
+        Configuración de conexión del Administrador de Paquetes
+    </figcaption>
+</figure>
+
+<p>Cierra el cuadro de diálogo para aplicar los cambios.</p>
+
+<h2>Conectar un paquete</h2>
+
+<p>
+    Al conectar un paquete a un puerto, funciona como un proxy de conveniencia
+    para los puertos físicos. Al hacer clic para conectar un paquete (aquí,
+    "Pistas de guitarra de entrada") a una entrada, se conectan automáticamente
+    todos los puertos actuales del paquete a la vez.
+</p>
+
+<figure>
+    <img
+        src="/images/bundle-manager-use.png"
+        alt="Enrutamiento de paquetes en el Administrador de Conexiones de Audio"
+    />
+    <figcaption>
+        Enrutamiento de paquetes en el Administrador de Conexiones de Audio
+    </figcaption>
+</figure>
+
+<h2>Editar y eliminar paquetes</h2>
+
+<p>
+    En cualquier momento puedes reabrir la ventana del Administrador de
+    Paquetes, seleccionar un paquete, hacer clic en
+    <kbd class="menu">Editar</kbd> y cambiar la conexión de los puertos físicos
+    al paquete. Cierra la ventana para aplicar los cambios.
+</p>
+
+<p>
+    Puedes eliminar fácilmente un paquete existente. Abre la ventana del
+    Administrador de Paquetes, selecciona un paquete, haz clic en
+    <kbd class="menu">Eliminar</kbd>.
+</p>
+
+<h2>Reutilizar paquetes</h2>
+
+<p>
+    Como los paquetes son parte de una sesión en lugar de una configuración
+    global, puedes guardarlos como parte de una plantilla para su reutilización
+    futura. Simplemente crea una nueva sesión, crea y conecta pistas, buses y
+    paquetes, luego guarda tu sesión como plantilla. Elige esta plantilla al
+    crear una nueva sesión.
+</p>

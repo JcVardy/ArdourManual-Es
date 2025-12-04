@@ -1,0 +1,219 @@
+<h2 id="ace-amplifier">ACE Amplifier</h2>
+
+<p>
+    Este complemento puede ajustar la ganancia en un rango de +/- 20dB en
+    cualquier parte del cuadro de procesamiento. Es útil típicamente en
+    escenarios donde se necesita ajustar la salida de un complemento, pero el
+    complemento no proporciona un control de nivel de salida.
+</p>
+
+<p>
+    <em>Ganancia</em> es el único ajuste disponible. Puede configurarse en el
+    diálogo del editor genérico de complementos o ajustarse en la respectiva
+    pista de automatización.
+</p>
+
+<h2 id="ace-a-b-switch-cross-fade">ACE A/B Switch y ACE Cross Fade</h2>
+
+<p>
+    Estos dos complementos son muy similares y permiten alternar entre dos
+    plugins más arriba en la cadena de procesamiento utilizando una pista de
+    automatización y conexiones de pines personalizadas.
+</p>
+<p>
+    En el ejemplo a continuación, la caja de procesamiento para una pista de 1
+    canal tiene dos plugins <em>ACE Delay</em> procesando la entrada de manera
+    diferente. Cada complemento tiene una salida añadida manualmente para que la
+    señal original fluya hacia una instancia de un plugin mientras se omite el
+    otro. Ambas salidas resultantes luego fluyen hacia el plugin ACE A/B Switch.
+    La entrada 1 se considera la versión A, y la entrada 2 es la versión B.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/a-b-switch-pin-connections.png"
+        alt="Conexiones de pines para ACE A/B Switch"
+    />
+    <figcaption>Conexiones de pines para ACE A/B Switch</figcaption>
+</figure>
+
+<p>
+    Tanto el ACE A/B Switch como el ACE Cross Fade se configurarán por defecto
+    en la versión A. Usando una pista de automatización, se puede alternar entre
+    la versión B y volver a la A. Aquí es donde entra en juego la diferencia
+    entre los dos complementos.
+</p>
+
+<p>Con el ACE A/B Switch, el cambio es instantáneo, es A o B:</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/a-b-switch-lane.png"
+        alt="Conexiones de pines para ACE A/B Switch"
+    />
+    <figcaption>Conexiones de pines para ACE A/B Switch</figcaption>
+</figure>
+
+<p>
+    Sin embargo, con ACE Cross Fade, es posible hacer una transición gradual
+    hacia la versión B y luego regresar, mezclando la señal A y B en diferentes
+    proporciones.
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/a-b-crossfade-lane.png"
+        alt="Conexiones de pines para ACE Cross Fade"
+    />
+    <figcaption>Conexiones de pines para ACE Cross Fade</figcaption>
+</figure>
+
+<p>Los plugins soportan configuraciones de 1, 2 y 4 canales:</p>
+
+<ul>
+    <li>Salida mono: In 1/2 -> Out 1</li>
+    <li>Salida estéreo: In 1/3 -> Out 1, In 2/4 -> Out 2</li>
+    <li>
+        Salida cuadrafónica: In 1/5 -> Out 1, In 2/6 -> Out 2, In 3/7 -> Out 3,
+        In 4/8 -> Out 4
+    </li>
+</ul>
+
+<h2 id="ace-mute">ACE Mute</h2>
+
+<p>
+    Este plugin puede silenciar la señal en cualquier parte de la cadena de
+    procesamiento, a diferencia de automatizar el estado de silencio de la
+    pista, que solo afecta al audio procesado. Usar <em>ACE Mute</em> al
+    principio de la cadena de señales significa que, en el estado de silencio,
+    ninguna señal será procesada por los plugins posteriores en la cadena.
+</p>
+
+<p>
+    <em>ACE Mute</em> no tiene configuraciones. Toda la interacción del usuario
+    ocurre en la pista de automatización dedicada:
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/a-mute-example.png"
+        alt="Usando ACE Mute"
+    />
+    <figcaption>Usando ACE Mute</figcaption>
+</figure>
+
+<p>
+    Ardour también incluye una variante de <em>ACE Mute</em> llamada
+    <em>ACE Slow Mute</em>, que aplica un desvanecimiento de 1 segundo
+    antes/después de silenciar.
+</p>
+
+<h2 id="voice-level-activate">Voice/Level Activate</h2>
+
+<p>
+    Este plugin activa el transporte cuando el nivel de señal en la entrada del
+    plugin supera un nivel definido por el usuario. Un escenario común donde
+    esto es útil es en grabaciones en un estudio casero, donde un instrumento o
+    micrófono vocal está a una distancia de la computadora. Al armar una pista
+    para grabar, activar el modo de grabación y luego aplaudir frente al
+    micrófono o rasguear una cuerda, se activará el transporte y comenzará a
+    grabar en la pista seleccionada.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/voice-level-activate.png"
+        alt="Voz/Activación por nivel"
+    />
+    <figcaption>Voz/Activación por nivel</figcaption>
+</figure>
+
+<p>El único ajuste configurable es el umbral de nivel de entrada.</p>
+
+<h2 id="midi-note-mapper">MIDI Note Mapper</h2>
+
+<p>
+    Mapea notas MIDI arbitrarias a otras. Esto afecta tanto a los eventos de
+    note-on como de note-off, así como a la presión de tecla polifónica. Una
+    sola nota puede ser mapeada dos veces, pero solo se utiliza el último mapeo.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/midi-note-mapper.png"
+        alt="MIDI Note Mapper"
+    />
+    <figcaption>MIDI Note Mapper</figcaption>
+</figure>
+
+<h2>Arpegiadores</h2>
+
+<p>
+    Los arpegiadores suelen tomar un acorde y reproducirlo nota por nota en un
+    patrón determinado: hacia arriba (desde la nota más baja hasta la más alta),
+    hacia abajo (desde la nota más alta hasta la más baja), hacia arriba y hacia
+    abajo, hacia abajo y hacia arriba, o de forma aleatoria.
+</p>
+
+<p>
+    También tienen una serie de ajustes adicionales como la división, que define
+    la velocidad con la que un arpegiador repetirá el patrón, o el número de
+    octavas entre las que saltará el arpegiador mientras transpone una nota
+    repetida.
+</p>
+
+<p>
+    Los tres arpegiadores incluidos con Ardour&nbsp;— arpegiador simple,
+    arpegiador Barlow y arpegiador Raptor&nbsp;— comparten estos ajustes
+    básicos. Sin embargo, algunos de sus detalles de diseño varían.
+</p>
+
+<p>
+    El arpegiador simple permite configurar diferentes velocidades para las
+    notas en la línea de compás, línea de ritmo y subdivisiones. También tiene
+    un ajuste de swing.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/plugins-arpeggiator-simple.png"
+        alt="Arpegiador simple"
+    />
+    <figcaption>Arpegiador simple</figcaption>
+</figure>
+
+<p>
+    El arpegiador Barlow tiene activación precisa a nivel de muestras y se
+    ajusta automáticamente a la firma de tiempo actual. También permite
+    configurar las velocidades mínima y máxima.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/plugins-arpeggiator-barlow.png"
+        alt="Arpegiador Barlow"
+    />
+    <figcaption>Arpegiador Barlow</figcaption>
+</figure>
+
+<p>
+    El arpegiador Raptor tiene controles armónicos, seguimiento de tono y
+    velocidad de entrada, y algunas otras características.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/plugins-arpeggiator-raptor.png"
+        alt="Arpegiador Raptor"
+    />
+    <figcaption>Arpegiador Raptor</figcaption>
+</figure>

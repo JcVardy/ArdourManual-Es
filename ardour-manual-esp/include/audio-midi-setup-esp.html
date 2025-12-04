@@ -1,0 +1,119 @@
+<h2 class="clear">Configuración de Audio/MIDI</h2>
+
+<figure class="center">
+    <img
+        width="50%"
+        src="/images/Audio-MIDI_Setup.png"
+        alt="El cuadro de diálogo de Configuración de Audio/MIDI"
+    />
+    <figcaption>El cuadro de diálogo de Configuración de Audio/MIDI</figcaption>
+</figure>
+
+<p>
+    Esta ventana muestra las diferentes opciones de audio que Ardour usará para
+    la sesión de trabajo actual, tanto para hardware como para software, y está
+    compuesta por:
+</p>
+
+<table class="dl">
+    <tr>
+        <th>Sistema de Audio</th>
+        <td>
+            Dependiendo del sistema operativo, Ardour puede utilizar diferentes
+            sistemas de audio. Por ejemplo, en Linux, se pueden usar tanto
+            <abbr title="Advanced Linux Sound Architecture">ALSA</abbr>,
+            PulseAudio y <abbr title="JACK Audio Connection Kit">JACK</abbr>. En
+            Mac OS X, normalmente se utilizará
+            <kbd class="menu">CoreAudio</kbd>. Los usuarios avanzados en todas
+            las plataformas también pueden utilizar
+            <kbd class="menu">NetJack</kbd>, que proporciona E/S de audio a
+            través de red.
+        </td>
+    </tr>
+    <tr>
+        <th>Dispositivo de Entrada</th>
+        <td>
+            El selector debe mostrar todas las interfaces disponibles
+            proporcionadas por el sistema de audio anterior y que sean capaces
+            de capturar audio.
+        </td>
+    </tr>
+    <tr>
+        <th>Dispositivo de Salida</th>
+        <td>
+            El selector debe mostrar todas las interfaces disponibles
+            proporcionadas por el sistema de audio anterior y que sean capaces
+            de reproducir audio.
+        </td>
+    </tr>
+    <tr>
+        <th>Tasa de Muestreo</th>
+        <td>
+            El selector permitirá seleccionar cualquier tasa de muestreo
+            soportada por el dispositivo seleccionado anteriormente.
+        </td>
+    </tr>
+    <tr>
+        <th>Tamaño de Búfer</th>
+        <td>
+            El tamaño del búfer utilizado por la interfaz de audio se puede
+            ajustar para permitir una menor latencia, o un menor uso de CPU y
+            mayor latencia.
+        </td>
+    </tr>
+    <tr>
+        <th>Periodos</th>
+        <td>
+            Número de cuadros entre cada interrupción de hardware (conversión
+            análogo-digital o digital-análogo).
+        </td>
+    </tr>
+    <tr>
+        <th>Monitoreo de Hardware</th>
+        <td>
+            Esta sección permite elegir si Ardour o el hardware de audio debe
+            manejar el monitoreo de grabación.
+        </td>
+    </tr>
+    <tr>
+        <th>Ajustes Avanzados</th>
+        <td>
+            Esta sección contiene varios ajustes de bajo nivel listados a
+            continuación.
+        </td>
+    </tr>
+    <tr>
+        <th>Sistema MIDI</th>
+        <td>
+            Esto permite elegir un controlador MIDI. En macOS, esto será
+            <kbd class="menu">CoreMIDI</kbd>. En Linux, la elección será entre
+            el secuenciador ALSA y los dispositivos crudos ALSA. Elegir
+            "Ninguno" desactivará la conexión al backend MIDI externo y evitará
+            que Ardour sea expuesto a puertos MIDI externos, mientras permite
+            enrutar eventos MIDI dentro del programa.
+        </td>
+    </tr>
+    <tr>
+        <th>Configuración y Calibración</th>
+        <td>
+            Este botón ejecuta un proceso guiado semi-automatizado para obtener
+            mediciones precisas de latencia de hardware para los puertos MIDI
+            disponibles.
+        </td>
+    </tr>
+    <tr>
+        <th>Latencia de Entrada/Salida de Hardware</th>
+        <td>
+            Especificar el retraso de hardware en muestras para una compensación
+            precisa de latencia.
+        </td>
+    </tr>
+    <tr>
+        <th>Calibrar Audio</th>
+        <td>
+            Este botón ejecuta un proceso guiado semi-automatizado para obtener
+            mediciones precisas de latencia de hardware para los puertos de
+            audio disponibles.
+        </td>
+    </tr>
+</table>

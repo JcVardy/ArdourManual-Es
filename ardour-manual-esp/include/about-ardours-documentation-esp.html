@@ -1,0 +1,164 @@
+<h2 id="conventions">Convenciones utilizadas en este manual</h2>
+
+<p>
+    Esta sección cubre algunas de las convenciones tipográficas y de lenguaje
+    utilizadas en este manual.
+</p>
+
+<h3 id="keyboards-and-modifiers">Teclados y Modificadores</h3>
+
+<p>
+    <dfn>Las asignaciones de teclado</dfn> se muestran así: <kbd>s</kbd> o
+    <kbd class="mod1">x</kbd>.
+</p>
+
+<p>
+    <kbd class="mod1">x</kbd> significa "presiona la tecla
+    <kbd class="mod1n"></kbd>, mantenla presionada y luego también presiona la
+    tecla <kbd>x</kbd>".
+</p>
+
+<p>
+    Se pueden ver combinaciones como <kbd class="mod12">e</kbd>, lo que
+    significa "mantén presionada la tecla <kbd class="mod1n"></kbd>
+    <em>y</em> la tecla <kbd class="mod2n"></kbd>, y luego, mientras mantienes
+    ambas presionadas, pulsa la tecla <kbd>e</kbd>".
+</p>
+
+<p class="note">
+    Las diferentes plataformas tienen distintas convenciones sobre qué tecla
+    modificadora (Control o Command) usar como la principal o más común. Cuando
+    se visualiza este manual desde una máquina que se identifica como ejecutando
+    OS X, se verá <kbd>Cmd</kbd> donde corresponda (por ejemplo, en el primer
+    ejemplo de arriba). En otras máquinas, se verá <kbd>Ctrl</kbd> en su lugar.
+</p>
+
+<h3 id="mouse-buttons">Botones del Ratón</h3>
+
+<p>
+    Los <a href="@@mouse">botones del ratón</a> se mencionan como
+    <kbd class="mouse">Izquierdo</kbd>, <kbd class="mouse">Central</kbd> y
+    <kbd class="mouse">Derecho</kbd>. Ardour puede utilizar botones adicionales,
+    pero no tienen un comportamiento predeterminado en el programa.
+</p>
+
+<h4 id="mouse-click-modifiers">Modificadores de Clic del Ratón</h4>
+
+<p>
+    Muchas funciones de edición se realizan haciendo clic con el ratón mientras
+    se mantiene presionada una tecla modificadora, por ejemplo,
+    <kbd class="mouse mod1">Izquierdo</kbd>.
+</p>
+
+<h4 id="mouse-wheel">Rueda del Ratón</h4>
+
+<p>
+    Algunos elementos de la interfaz gráfica pueden controlarse opcionalmente
+    con la rueda del ratón cuando el puntero se encuentra sobre ellos. La
+    notación para la acción de la rueda del ratón es
+    <kbd class="mouse">&uArr;</kbd> <kbd class="mouse">&lArr;</kbd>
+    <kbd class="mouse">&dArr;</kbd> <kbd class="mouse">&rArr;</kbd>.
+</p>
+
+<h4 id="context-click">Clic de Contexto</h4>
+
+<p>
+    El término <dfn>clic de contexto</dfn> se usa para indicar un
+    <kbd class="mouse">clic derecho</kbd> sobre un elemento específico de la
+    interfaz gráfica. Aunque el clic derecho es la forma común y predeterminada
+    de hacerlo, existen otras maneras de lograr lo mismo&mdash;este término se
+    refiere a cualquiera de ellas, y el resultado siempre será la aparición de
+    un menú específico para el elemento seleccionado.
+</p>
+
+<h4 id="the-pointer">"El Puntero"</h4>
+
+<p>
+    Cuando el manual se refiere al "puntero", significa la representación en
+    pantalla de la posición del ratón o la ubicación de una acción táctil si se
+    está utilizando una interfaz táctil.
+</p>
+
+<h3 id="other-user-input">Otras Formas de Entrada del Usuario</h3>
+
+<p>
+    Ardour admite controladores de hardware, como bancos de
+    <kbd class="fader">deslizadores</kbd> (faders),
+    <kbd class="knob">perillas</kbd> o <kbd class="button">botones</kbd>.
+</p>
+
+<h3 id="menu-items">Elementos del Menú</h3>
+
+<p>
+    Los elementos del menú se indican de la siguiente manera:
+    <kbd class="menu">Superior &gt; Siguiente &gt; Más Profundo</kbd>. Cada
+    elemento separado por "&gt;" indica un nivel dentro de un menú anidado o
+    submenú.
+</p>
+
+<h3 id="osc-messages">Mensajes OSC</h3>
+
+<p>
+    Los mensajes OSC, ya sean enviados o recibidos, se muestran así:
+    <kbd class="osc">/transport_stop</kbd>.
+</p>
+
+<h3 id="dialog-options">Opciones de Preferencias/Diálogo</h3>
+
+<p>
+    Las opciones en varios cuadros de diálogo, especialmente en las Preferencias
+    y Propiedades, se indican de la siguiente manera:
+</p>
+
+<p>
+    <kbd class="option"
+        >Editar &gt; Preferencias &gt; Audio &gt; Alguna opción</kbd
+    >.
+</p>
+
+<p>
+    Cada elemento sucesivo indica un menú, submenú o una pestaña de navegación
+    en un diálogo. El último elemento es el que se debe elegir o seleccionar.
+</p>
+
+<p>Si una opción está deseleccionada, se verá así:</p>
+
+<p>
+    <kbd class="optoff"
+        >Editar &gt; Preferencias &gt; Audio &gt; Alguna otra ppción</kbd
+    >.
+</p>
+
+<h3 id="user=input">Entradas del Usuario</h3>
+
+<p>
+    Algunos diálogos o funciones pueden requerir que el usuario ingrese datos
+    <kbd class="input">como este</kbd>. En casos raros, ciertas operaciones
+    deberán realizarse en la línea de comandos del sistema operativo:
+</p>
+
+<kbd class="cmd lin">cat /proc/cpuinfo</kbd>
+<kbd class="cmd mac">sleep 3600</kbd>
+<kbd class="cmd win">ping www.google.com</kbd>
+
+<h3 id="program-output">Salida del Programa</h3>
+
+<p>
+    Los mensajes importantes de Ardour u otros programas se mostrarán
+    <samp>de esta manera</samp>.
+</p>
+
+<h3 id="notes">Notas</h3>
+
+<p class="note">
+    Notas importantes sobre aspectos que podrían no ser obvios se muestran en
+    este formato.
+</p>
+
+<h3 id="warnings">Advertencias</h3>
+
+<p class="warning">
+    Problemas serios que podrían causar fallos, pérdida de datos, afectar la
+    calidad del sonido o devorar metafóricamente a tu pez dorado, se muestran de
+    esta manera.
+</p>

@@ -1,0 +1,3 @@
+[submodule "ardour-manual"]
+	path = ardour-manual
+	url = https://git.ardour.org/ardour/manual.git

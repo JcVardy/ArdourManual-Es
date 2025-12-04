@@ -1,0 +1,134 @@
+<h2>Sensibilidad a la Velocidad</h2>
+
+<p>
+    Este control define cuánto influye la velocidad de un dispositivo MIDI en el
+    volumen del clip. Al 0%, que es el valor predeterminado, no importa con
+    cuánta fuerza se presione una tecla o un pad, el volumen será el que esté
+    configurado. Al 100%, presionar una tecla con la máxima fuerza producirá el
+    volumen máximo, mientras que tocarla suavemente generará un sonido casi
+    inaudible.
+</p>
+
+<h2>Estilo de Lanzamiento</h2>
+
+<p>
+    El <dfn>Estilo de Lanzamiento</dfn> define cómo interactúa el usuario con la
+    reproducción del clip. Ardour distingue entre presionar un botón o una tecla
+    (el evento 'down' del ratón o el evento note-on de MIDI) y soltar un botón o
+    una tecla (el evento 'up' del ratón o el evento note-off de MIDI).
+</p>
+
+<p>
+    Una ranura de activación puede configurarse de manera que, al presionar una
+    almohadilla (pad) de silicona en un controlador de cuadrícula externo,
+    Ardour reproduzca el clip en esa ranura de forma indefinida en bucle.
+    También puede configurarse para que Ardour repita el clip solo mientras la
+    almohadilla permanezca presionada y deje de reproducirlo en cuanto se
+    suelte.
+</p>
+
+<table>
+    <tr>
+        <th><kbd class="menu">Activar (Trigger)</kbd></th>
+        <td width="100px">
+            <img src="/images/launch-style-icons-trigger.png" />
+        </td>
+        <td>
+            Al hacer clic se inicia la reproducción del clip. Clics posteriores, 
+            así como eventos de liberación del ratón o de nota MIDI (note-off), serán ignorados.
+        </td>
+    </tr>
+    <tr>
+        <th><kbd class="menu">Re-activar (Retrigger)</kbd></th>
+        <td width="100px">
+            <img src="/images/launch-style-icons-retrigger.png" />
+        </td>
+        <td>
+            Al hacer clic se inicia la reproducción del clip. Otro clic reiniciará 
+            (re-activará) la reproducción desde el principio, tomando en cuenta la cuantización. 
+            Se ignorarán eventos de liberación del ratón o de nota MIDI.
+        </td>
+    </tr>
+     <tr>
+        <th><kbd class="menu">Compuerta (Gate)</kbd></th>
+        <td width="100px"><img src="/images/launch-style-icons-gate.png" /></td>
+        <td>
+            El clip se reproducirá mientras el botón del ratón o la tecla/pad MIDI permanezca presionado. 
+            La cuantización define cuánto tiempo pasa entre presionar y soltar el botón/tecla 
+            y el inicio o final de la reproducción.
+        </td>
+    </tr>
+    <tr>
+        <th><kbd class="menu">Alternar (Toggle)</kbd></th>
+        <td width="100px">
+            <img src="/images/launch-style-icons-toggle.png" />
+        </td>
+        <td>
+            El clip seguirá reproduciéndose hasta que se haga clic nuevamente o 
+            se envíe otro evento de "note-on" desde un dispositivo MIDI.
+        </td>
+    </tr>
+    <tr>
+        <th><kbd class="menu">Repetir (Repeat)</kbd></th>
+        <td width="100px">
+            <img src="/images/launch-style-icons-repeat.png" />
+        </td>
+        <td>
+            El contenido del clip se reproducirá en función del ajuste de cuantización.
+        </td>
+    </tr>
+</table>
+
+<h2>Cuantización de Lanzamiento (Launch Quantize)</h2>
+
+<p>
+    Esta configuración define cuánto tiempo esperará Ardour antes de comenzar la reproducción
+    de un clip en una ranura de activación. Si el transporte ya está en marcha y la cuantización
+    está establecida en 1 compás (valor predeterminado), Ardour esperará hasta el
+    siguiente compás para comenzar la reproducción del clip. Cuantizar a un compás completo 
+    o a varios compases suele garantizar que los tiempos fuertes (downbeats) de una pista de 
+    batería y una línea de bajo estén alineados.
+</p>
+
+<p>
+    El valor de cuantización puede ser tan grande como 4 compases o tan pequeño como 1/64 de compás.
+    Cuando se selecciona 'Ninguna', la reproducción con el transporte en marcha comenzará
+    de inmediato.
+</p>
+
+<h2>Legato</h2>
+
+<p>
+    El modo <dfn>Legato</dfn> ayuda a mantener sincronizados dos clips de una misma pista
+    al cambiar de uno a otro. Con Legato activado, Ardour continuará la reproducción del
+    segundo clip en la posición donde terminó el primero. Ten en cuenta que aquí también
+    se aplica la cuantización.
+</p>
+
+<h2>Aislamiento de entradas (Cue Isolate)</h2>
+
+<p>
+    Cuando se reproduce una entrada completa, se activan todas las ranuras que le pertenecen.
+    <dfn>Solo Isolate</dfn> (aislar solo) es una forma de desactivar ese comportamiento para ranuras seleccionadas.
+    Una ranura aislada solo se activará cuando reciba directamente un evento de pulsación
+    del mouse (mouse-down) o un evento MIDI de nota (note-on).
+</p>
+
+<p>
+    Las ranuras aisladas se distinguen visualmente del resto: tienen un fondo con un 
+    degradado lineal de negro a transparente en el botón de disparo.
+</p>
+
+<figure>
+    <img
+        style="width: 50%"
+        src="/images/isolated-trigger-slots.png"
+        alt="Ranuras de disparo aisladas"
+    />
+    <figcaption>Ranuras de activación aisladas</figcaption>
+</figure>
+
+<p>
+    En la captura de pantalla anterior, las pistas de Bajo, Sintetizador Principal y Piano Eléctrico
+    tienen al menos una ranura de activación aislada.
+</p>

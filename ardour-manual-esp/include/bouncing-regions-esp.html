@@ -1,0 +1,152 @@
+<p>
+    La región seleccionada o las múltiples regiones seleccionadas de cualquier
+    pista pueden exportarse a archivos dedicados. Esto crea archivos de audio en
+    el disco dentro de la carpeta 'intercambio' del proyecto y los agrega
+    automáticamente a la lista de Fuentes.
+</p>
+
+<p>
+    Hay dos comandos para hacerlo:
+    <kbd class="menu">Exportar sin procesamiento</kbd> y
+    <kbd class="menu">Exportar con procesamiento</kbd>, ambos disponibles en el
+    menú de nivel superior <kbd class="menu">Región</kbd>, así como en el menú
+    contextual (clic derecho) de las regiones.
+</p>
+
+<h2>Exportar sin procesamiento</h2>
+
+<p>
+    Este método desactiva todo el procesamiento en el canal de mezcla,
+    incluyendo el fader/panner y los procesadores pre y post-fader. Sin embargo,
+    aplicará ajustes de ganancia no destructivos y envolventes de fundido de
+    entrada/salida a los clips de audio.
+</p>
+
+<p>
+    Eliminar todo el procesamiento en el canal de mezcla significa que, en el
+    caso de las regiones MIDI, los archivos MIDI se exportarán al disco.
+</p>
+
+<p>
+    El cuadro de diálogo con los ajustes de exportación proporcionará diferentes
+    opciones basadas en varios escenarios posibles.
+</p>
+
+<h3>Una pista, una región</h3>
+
+<p>
+    Si solo se selecciona una región, Ardour sugerirá automáticamente utilizar
+    el nombre de la región tal como está. También proporcionará dos opciones:
+</p>
+
+<ul>
+    <li>
+        Cargar automáticamente el archivo exportado en una ranura respectiva de
+        una cola de su elección.
+    </li>
+
+    <li>
+        Rebotar la región en una carpeta de Clips definida por el usuario para
+        que pueda reutilizarse a través de sesiones.
+    </li>
+</ul>
+
+<figure>
+    <img
+        class="hdimage"
+        src="/images/bounce-single-region.png"
+        alt="Exportando una sola región sin procesamiento"
+    />
+    <figcaption>Exportando una sola región sin procesamiento</figcaption>
+</figure>
+
+<h3>Múltiples pistas, una región por cada pista</h3>
+
+<p>
+    Cuando la selección contiene varias regiones, y cada región está en una
+    pista separada, esto hace posible agregar automáticamente los archivos
+    exportados a las ranuras respectivas en una cola. Sin embargo, dado que se
+    han seleccionado varias regiones, Ardour usará los nombres originales de las
+    regiones y los precederá con el texto proporcionado por el usuario, si el
+    usuario elige enviar algún texto. Por ejemplo, agregar el prefijo "take1-" a
+    las regiones "piano" y "bajo" de sus respectivas pistas mono creará los
+    archivos "take1-piano.wav" y "take1-bajo.wav".
+</p>
+
+<figure>
+    <img
+        class="hdimage"
+        src="/images/bounce-single-regions-different-tracks.png"
+        alt="Exportando regiones individuales en diferentes pistas"
+    />
+    <figcaption>
+        Exportando regiones individuales en diferentes pistas
+    </figcaption>
+</figure>
+
+<h3>Una o más pistas, dos o más regiones por pista</h3>
+
+<p>
+    Cuando la selección contiene al menos dos regiones en la misma pista, la
+    opción de agregar archivos exportados a las ranuras de la cola no está
+    disponible, ya que no se pueden cargar dos o más clips en la misma ranura.
+    Ardour también pedirá un prefijo opcional y proporcionará una opción para
+    rebotar en la carpeta de Clips.
+</p>
+
+<figure>
+    <img
+        class="hdimage"
+        src="/images/bounce-single-regions-same-track.png"
+        alt="Exportando regiones individuales en la misma pista"
+    />
+    <figcaption>Exportando regiones individuales en la misma pista</figcaption>
+</figure>
+
+<h2>Exportando con procesamiento</h2>
+
+<p>
+    Este método aplica todo el procesamiento en el canal del mezclador. Si los
+    datos originales son MIDI y pasan por un instrumento virtual que los traduce
+    a audio, se exportará un archivo de audio. Dado que esto cambia la
+    naturaleza de los datos, exportar para activar ranuras no está disponible,
+    ya que las pistas MIDI no pueden contener datos de audio.
+</p>
+
+<p>
+    Al igual que en el caso de exportar sin procesamiento, la disponibilidad de
+    opciones depende del caso de uso.
+</p>
+
+<h3>Una pista, una región</h3>
+
+<p>
+    En este escenario, Ardour sugerirá automáticamente usar el nombre de la
+    región y proporcionará una opción para rebotar a la carpeta Clips.
+</p>
+
+<figure>
+    <img
+        class="hdimage"
+        src="/images/bounce-single-region-with-processing.png"
+        alt="Exportando una sola región con procesamiento"
+    />
+    <figcaption>Exportando una sola región con procesamiento</figcaption>
+</figure>
+
+<h3>Cualquier cantidad de pistas y regiones por pista</h3>
+
+<p>
+    En este escenario, Ardour usará un prefijo definido por el usuario para
+    agregarlo al nombre original de las regiones al crear archivos de audio.
+    También hay una opción para rebotar a la carpeta Clips.
+</p>
+
+<figure>
+    <img
+        class="hdimage"
+        src="/images/bounce-multiple-regions-with-processing.png"
+        alt="Exportando múltiples regiones con procesamiento"
+    />
+    <figcaption>Exportando múltiples regiones con procesamiento</figcaption>
+</figure>

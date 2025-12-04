@@ -1,0 +1,136 @@
+<p>
+    Los <dfn>envíos auxiliares</dfn> son simples
+    <a href="@@processor-box">procesadores</a> en una tira de canal de bus o
+    pista. Capturan la señal en un punto específico del flujo de señal (antes
+    del fader, después del fader, antes o después de los ecualizadores y otros
+    plugins, etc.) y envían una copia de esa señal a un bus, sin afectar el
+    flujo normal de la señal hacia el fader del canal.
+</p>
+<p>
+    Los envíos auxiliares de varias pistas se envían colectivamente a un
+    <dfn>bus</dfn> en Ardour, para crear una mezcla de monitoreo para un músico,
+    o para alimentar una unidad de efectos. Un bus utilizado de esta manera se
+    considera un bus auxiliar o <dfn>Aux bus</dfn> aunque sea el mismo que
+    cualquier otro bus. La salida de tal bus podría ser enrutada a salidas de
+    hardware separadas (en el caso de mezclas para auriculares o monitores), o
+    devuelta a la mezcla principal (en el caso de un efecto).
+</p>
+
+<p>
+    Los envíos auxiliares no aparecen fuera de Ardour, ni en el dispositivo de
+    audio ni como puertos de JACK, por lo que se deben usar los
+    <a href="@@external-sends">Envíos Externos</a> para enviar audio al
+    dispositivo de audio o puertos de Jack. Los Envíos Externos pueden enviar la
+    señal capturada directamente a otro lugar, lo cual no suele ser posible en
+    mezcladores de hardware.
+</p>
+
+<p>
+    Puede ser útil
+    <a href="@@comparing-aux-sends-and-subgroups">comparar y contrastar</a> el
+    uso de envíos auxiliares con el <a href="@@subgrouping">subagrupamiento</a>.
+</p>
+
+<h2>Agregar un nuevo bus auxiliar</h2>
+<p>
+    Se pueden crear nuevos buses usando el menú
+    <kbd class="menu">Sesión &gt; Agregar Pista, Bus o VCA&hellip;</kbd>, y
+    seleccionando <kbd class="menu">Buses de Audio</kbd> en el selector de
+    Plantilla/Tipo a la izquierda del diálogo
+    <kbd class="menu">Agregar Pista/Bus/VCA</kbd>.
+</p>
+
+<h2>Agregar un envío a un bus auxiliar</h2>
+<p>
+    Haciendo clic con el botón derecho en el cuadro del procesador de la pista a
+    la que se enviará al bus, y eligiendo
+    <kbd class="menu">Nuevo Envío Auxiliar&hellip;</kbd> se muestra un submenú,
+    listando los buses. Elegir un bus añadirá un envío (que será visible en el
+    cuadro del procesador). Tenga en cuenta que si el único bus existente es el
+    Bus Principal (Master Bus), el menú estará atenuado.
+</p>
+
+<h3>Envíos Auxiliares Pre-Fader y Post-Fader</h3>
+<p>
+    Dependiendo de si el clic contextual ocurrió por encima o por debajo del
+    fader en el cuadro del procesador, el nuevo envío auxiliar puede colocarse
+    antes o después del fader en la tira de canal.
+</p>
+<ul>
+    <li>
+        El envío auxiliar <dfn>Post-fader</dfn> se utiliza típicamente cuando se
+        usa un aux para procesamiento compartido de señales (FX), de modo que la
+        cantidad de efecto siempre sea proporcional al fader de la mezcla
+        principal.
+    </li>
+    <li>
+        El envío auxiliar <dfn>Pre-fader</dfn> asegura que el nivel enviado al
+        bus sea controlado <em>solo</em> por el envío, no por el fader
+        principal—esto es típico cuando se construyen mezclas para auriculares o
+        monitores.
+    </li>
+</ul>
+
+<p>
+    El color del procesador reflejará esta posición pre/post (rojo para
+    <span class="for-red">Pre</span>, verde para
+    <span class="for-green">Post</span>). Arrastrar y soltar el envío dentro del
+    cuadro del procesador antes o después del procesador de Fader cambiará el
+    tipo de fader en consecuencia.
+</p>
+
+<h2>Agregar un nuevo bus auxiliar y enviar un grupo de pistas a él</h2>
+<p>
+    Todos los miembros de un grupo pueden enviarse a un nuevo bus auxiliar de
+    una sola vez con un solo clic. Después de crear el
+    <a href="@@track-and-bus-groups">grupo de pistas</a>
+    (y agregarle pistas), hacer clic derecho en la pestaña del grupo permite
+    elegir entre
+    <kbd class="menu">Agregar nuevo bus auxiliar (pre-fader)</kbd> o
+    <kbd class="menu">Agregar nuevo bus auxiliar (post-fader)</kbd>. Se creará
+    un nuevo bus auxiliar, y se añadirá un nuevo envío auxiliar a cada miembro
+    del grupo de pistas que se conecta a este bus auxiliar.
+</p>
+
+<h2>Alterar los Niveles de Envío</h2>
+<p>
+    La cantidad de señal recibida por un envío que se entrega al bus al que se
+    conecta puede alterarse de dos maneras:
+</p>
+<h3>Usando el Fader de Envío</h3>
+<p>
+    Cada procesador de envío tiene un pequeño fader horizontal que se puede
+    ajustar de la manera habitual. No es muy grande, por lo que esto puede ser
+    un poco insatisfactorio si se requiere un control muy preciso sobre el nivel
+    de envío.
+</p>
+
+<h3>Asignar Envíos Auxiliares a los Faders Principales</h3>
+<p>
+    En el modo Mezclador, presionar el botón marcado
+    <kbd class="menu">Mostrar Envíos</kbd> en un bus auxiliar alterará la tira
+    de canal para cada pista o bus que alimente el bus auxiliar. Muchos aspectos
+    de la tira se volverán insensibles y/o cambiarán su apariencia visual. Más
+    importante aún, el fader principal de las tiras de canal afectadas ahora
+    controlará el nivel de envío y <strong>no</strong> la ganancia de la pista.
+    Esto ofrece un control más grande y configurable para alterar el nivel. Al
+    hacer clic en el botón <kbd class="menu">Mostrar Envíos</kbd> del bus
+    auxiliar nuevamente, se revertirá la tira de canal a su uso normal.
+</p>
+
+<h2>Deshabilitar Envíos</h2>
+<p>
+    Hacer clic en el pequeño LED en la pantalla de envío en el cuadro de
+    procesador de la tira de canal habilitará/deshabilitará el envío. Cuando
+    esté deshabilitado, solo se entregará silencio al bus auxiliar por esta
+    pista. Cuando esté habilitado, la señal que llegue al envío se entregará al
+    bus auxiliar.
+</p>
+
+<h2>Paneo de Envíos</h2>
+<p>
+    Los paneadores de envío pueden configurarse para ser independientes del
+    paneo principal, o para seguirlo. Esto último podría ser útil para efectos
+    de Reverb (reverberación), o para mezclas de monitores internos entregadas
+    en estéreo.
+</p>

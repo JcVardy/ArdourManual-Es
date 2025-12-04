@@ -1,0 +1,119 @@
+<figure>
+    <img
+        src="/images/typical-audio-track-controls.png"
+        alt="controles de pista de audio"
+    />
+    <figcaption>Sección de encabezado de una pista de audio</figcaption>
+</figure>
+
+<p>
+    Cada pista muestra una <dfn>sección de encabezado</dfn>, para los ajustes
+    relevantes solo para esta pista.
+</p>
+<p>Se puede cambiar la altura de la pista de la siguiente manera:</p>
+
+<ul>
+    <li>
+        Usando el menú <kbd class="menu">Pista &gt; Altura</kbd>. La opción
+        <kbd class="menu">Ajustar selección (Vertical)</kbd> (predeterminado:
+        <kbd>F</kbd>) es particularmente útil.
+    </li>
+    <li>
+        Haciendo doble clic en un espacio vacío en el encabezado de la pista,
+        para alternar entre las alturas de pista <em>Normal</em> y
+        <em>Más grande</em> desde este menú.
+    </li>
+    <li>
+        O sujetando la parte inferior del encabezado de la pista con un
+        <kbd class="mouse"> clic izquierdo</kbd> y arrastrando.
+    </li>
+</ul>
+
+<p>
+    En la parte superior izquierda de los controles está el nombre de la pista,
+    el cual se puede editar haciendo doble clic en él. El nuevo nombre debe ser
+    único dentro de la sesión.
+</p>
+<p>
+    Debajo del nombre está el fader de nivel principal de la pista. Cambiarlo
+    afectará toda la pista:
+</p>
+
+<ul>
+    <li>
+        <kbd class="mouse">arrastrar</kbd> cambiará el valor del fader según la
+        posición del ratón
+    </li>
+    <li>
+        <kbd class="mod1 mouse">hacer clic</kbd> pondrá el fader en
+        &minus;&infin;
+    </li>
+    <li>
+        <kbd class="mod3 mouse">hacer clic</kbd> restablecerá el fader a su
+        posición original de 0dB.
+    </li>
+</ul>
+
+<p>
+    En el lado derecho de los encabezados están los medidores de nivel para las
+    salidas de la pista (1 nivel por salida).
+</p>
+
+<p>Los botones de control son:</p>
+<table class="dl">
+    <tr>
+        <th id="audiotrack-record">
+            <kbd style="color: red">&#9679;</kbd> (Grabar)
+        </th>
+        <td>
+            El botón con el círculo rosa arma la pista para grabación. Cuando
+            está armado, todo el botón se vuelve rosa y cambia a rojo brillante
+            en cuanto el transporte comienza a rodar y la pista está grabando.
+            <kbd class="mouse">Clic derecho</kbd> permitirá
+            habilitar/deshabilitar la protección de grabación (Rec-safe),
+            protegiendo la pista contra grabaciones accidentales.
+        </td>
+    </tr>
+    <tr>
+        <th id="audiotrack-mute"><kbd>M</kbd> (Mudo/Silenciar)</th>
+        <td>
+            Silencia la pista. <kbd class="mouse">Clic derecho</kbd> muestra un
+            menú que dicta qué partes particulares de la pista deben ser
+            silenciadas.
+        </td>
+    </tr>
+    <tr>
+        <th id="audiotrack-solo"><kbd>S</kbd> (Solo)</th>
+        <td>
+            Activa el solo para la pista. El comportamiento del sistema de solo
+            se describe en detalle en la sección
+            <a href="@@muting-and-soloing">Mudo y Solo</a>.
+            <kbd class="mouse">Clic derecho</kbd> permitirá
+            habilitar/deshabilitar Aislar solo y Solo seguro.
+        </td>
+    </tr>
+    <tr>
+        <th id="audiotrack-playlist"><kbd>P</kbd> (Lista de reproducción)</th>
+        <td>
+            Abre un menú de lista de reproducción cuando se hace clic. El menú
+            ofrece varias operaciones relacionadas con la
+            <a href="@@playlists">lista de reproducción</a> de la pista.
+        </td>
+    </tr>
+    <tr>
+        <th id="audiotrack-automation"><kbd>A</kbd> (Automatización)</th>
+        <td>
+            Abre el menú de automatización para la pista. Para más detalles,
+            consulte
+            <a href="@@automation">Automatización</a>.
+        </td>
+    </tr>
+    <tr>
+        <th id="audiotrack-group"><kbd>G</kbd> (Grupo)</th>
+        <td>
+            Permite asignar la pista a un grupo existente o uno nuevo. Para más
+            detalles, consulte
+            <a href="@@track-and-bus-groups">Grupos de pista y bus</a>.
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,105 @@
+<p>Las notas MIDI pueden añadirse de varias maneras en Ardour:</p>
+
+<h2 id="add-new-notes-using-the-mouse">Usando el ratón</h2>
+
+<p>
+    Dibujar notas con el ratón requiere que exista una pista MIDI
+    <a href="@@create-midi-tracks">creada</a>, y que una región MIDI vacía haya
+    sido <a href="@@create-midi-regions">creada</a> en esta pista.
+</p>
+<p>
+    En el modo de <em>Dibujo</em> o <em>Edición Interna</em>
+    <a href="@@toolbox">Modo</a>, se pueden añadir nuevas notas con un clic o
+    arrastre: un <em>clic</em> del ratón crea una nota en la ubicación del
+    puntero (o el ancla más cercana de la cuadrícula si la cuadrícula está
+    habilitada), y su duración es de una
+    <a href="@@grid-controls">unidad de cuadrícula</a>. Un <em>arrastre</em> del
+    ratón crea la nota igual que un clic, pero permite establecer de forma
+    continua la duración de la nota hasta que se suelte el botón del ratón.
+</p>
+
+<p>
+    La barra de herramientas disponible en el modo <dfn>Dibujo</dfn> ayuda a
+    dibujar notas de longitud exacta, en un canal MIDI específico, con velocidad
+    predefinida:
+</p>
+
+<figure>
+    <img
+        style="width: 75%"
+        src="/images/midi-draw-toolbar.png"
+        alt="Barra de herramientas de dibujo MIDI"
+    />
+    <figcaption>Barra de herramientas de dibujo MIDI</figcaption>
+</figure>
+
+<p>
+    Mientras que la lista desplegable de <dfn>Velocidad</dfn> solo muestra
+    preajustes, puedes pasar el ratón sobre ella y girar la rueda del ratón para
+    incrementar el valor actual en 1. Girarla sobre las otras dos listas
+    desplegables cambiará entre los distintos preajustes.
+</p>
+
+<p>
+    La opción <dfn>Automático</dfn> en tres listas desplegables funciona de
+    manera diferente en los tres casos:
+</p>
+
+<table class="dl">
+    <tr>
+        <th>Longitud</th>
+        <td>
+            La longitud será definida por la configuración de ajuste de la
+            cuadrícula
+        </td>
+    </tr>
+    <tr>
+        <th>Canal</th>
+        <td>Este valor se heredará de la nota más cercana</td>
+    </tr>
+    <tr>
+        <th>Velocidad</th>
+        <td>
+            El valor será una interpolación entre las dos notas más cercanas, y
+            también se tendrá en cuenta la posición de la nueva nota en relación
+            con cualquiera de las dos notas.
+        </td>
+    </tr>
+</table>
+
+<h2 id="add-new-notes-using-step-entry">Usando la entrada por pasos</h2>
+
+<p>
+    El <a href="@@step-entry">editor de entrada por pasos</a> permite ingresar
+    una melodía en secuencia a lo largo del tiempo, usando un teclado virtual y
+    controles específicos. Puede ser una forma muy útil y rápida de crear líneas
+    MIDI, de una manera similar a una máquina de escribir, especialmente cuando
+    se usan sus diferentes accesos directos de teclado.
+</p>
+<p>
+    La ventana de entrada por pasos se muestra al hacer
+    <kbd class="mouse">clic derecho</kbd> sobre el botón de grabación en el
+    <a href="@@midi-track-controls">encabezado de la pista MIDI</a> y
+    seleccionar <kbd class="menu">entrada por pasos</kbd>. Esto creará
+    automáticamente una región MIDI en la posición del cabezal de reproducción,
+    la cual se expandirá automáticamente con cada paso.
+</p>
+
+<h2 id="add-new-notes-using-the-virtual-keyboard">
+    Usando el teclado MIDI virtual
+</h2>
+
+<p>
+    El <a href="@@virtual-keyboard">El teclado MIDI virtual</a> — o un teclado
+    MIDI real conectado como entrada de las pistas — puede usarse para grabar
+    MIDI, de la misma manera en que un micrófono graba audio.
+</p>
+<p>
+    Se puede iniciar seleccionando el menú
+    <kbd class="menu">Ventana &gt; Teclado Virtual</kbd>. Al igual que para la
+    grabación de audio, la(s) pista(s) deben estar armadas para grabación, el
+    grabador principal activado, y luego iniciar el transporte. Al igual que en
+    la Entrada por Pasos, se generará automáticamente una región MIDI en la
+    posición del cabezal de reproducción, y se expandirá mientras dure la
+    grabación.
+</p>
