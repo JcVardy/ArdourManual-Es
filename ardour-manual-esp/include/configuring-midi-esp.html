@@ -1,41 +1,43 @@
-
 <p>
-  <dfn><abbr title="Musical Instrument Digital Interface">MIDI</abbr></dfn> is
-  a way to describe musical performances and to control music hardware and
-  software.
+  <dfn><abbr title="Musical Instrument Digital Interface">MIDI</abbr></dfn> es
+  una forma de describir interpretaciones musicales y de controlar hardware y
+  software musical.
 </p>
 
 <p>
-  Ardour can import and record MIDI data, and perform a variety of editing
-  operations on it. Furthermore, MIDI can be used to control various functions
-  of Ardour.
+  Ardour puede importar y grabar datos MIDI, y realizar una amplia variedad
+  de operaciones de edición sobre ellos. Además, el protocolo MIDI puede utilizarse para
+  controlar diversas funciones de Ardour.
 </p>
 
-<h2 id="midi-handling-frameworks">MIDI-handling Frameworks</h2>
+
+<h2 id="midi-handling-frameworks">Infraestructuras de gestión MIDI</h2>
 
 <p>
-  MIDI input and output for Ardour are handled internally by the same "engine" that
-  handles audio input and output. However, Ardour can use as many MIDI devices
-  as the system can see as there are no syncing difficulties as there would be with audio.
+  La entrada y salida MIDI en Ardour se gestionan internamente mediante el
+  mismo «motor» que maneja la entrada y salida de audio. Sin embargo, Ardour
+  puede utilizar tantos dispositivos MIDI como el sistema pueda reconocer,
+  ya que no existen dificultades de sincronización como las que se dan con
+  el audio.
 </p>
 
 <table class="dl">
   <tr><th>OS X</th>
-  <td><dfn>CoreMIDI</dfn> is the standard MIDI framework on OSX systems.</td></tr>
+    <td><dfn>CoreMIDI</dfn> es la infraestructura MIDI estándar en sistemas OS X.</td></tr>
   <tr><th>Linux</th>
-  <td><dfn><abbr title="Advanced Linux Sound API">ALSA</abbr> MIDI</dfn> is the
-  standard MIDI framework on Linux systems.</td></tr>
+    <td><dfn><abbr title="Advanced Linux Sound API">ALSA</abbr> MIDI</dfn> es la
+      infraestructura MIDI estándar en sistemas Linux.</td></tr>
   <tr><th>Windows</th>
-  <td><dfn><abbr title="Microsoft Multimedia Environment">MME</abbr></dfn> is the standard
-  MIDI framework on Windows systems.</td></tr>
+    <td><dfn><abbr title="Microsoft Multimedia Environment">MME</abbr></dfn> es la
+      infraestructura MIDI estándar en sistemas Windows.</td></tr>
 </table>
 
 <p class="note">
-  <dfn><abbr title="JACK Audio Connection Kit">JACK</abbr></dfn> is an
-  alternate audio system which Ardour can utilize for both audio and
-  MIDI.  JACK is used to route audio between independent applications,
-  and is now considered an advanced use case which is not recommended
-  for most users.  Users with a need to use JACK for audio routing
-  should consult the latest documentation at
-  the <a href="https://jackaudio.org/">JACK website</a>.
+  <dfn><abbr title="JACK Audio Connection Kit">JACK</abbr></dfn> es un sistema
+  de audio alternativo que Ardour puede utilizar tanto para audio como para
+  MIDI. JACK se usa para enrutar audio entre aplicaciones independientes y
+  hoy en día se considera un caso de uso avanzado que no se recomienda para
+  la mayoría de los usuarios. Los usuarios que necesiten utilizar JACK para
+  el ruteo de audio deberían consultar la documentación más reciente en el
+  <a href="https://jackaudio.org/">sitio web de JACK</a>.
 </p>

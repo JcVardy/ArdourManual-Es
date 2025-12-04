@@ -1,69 +1,76 @@
-<h2>Stretching</h2>
+<h2>Estiramiento</h2>
 
 <p>
-	When loading an audio clip into a trigger slot, Ardour applies some
-	heuristics to estimate its tempo in beats per minute. Unless a metadata
-	in the file source provides information,
-	<a href="https://github.com/breakfastquay/minibpm">minibpm</a> is used
-	to analyze and detect the file's BPM.
+	Al cargar un clip de audio en una ranura de activación, Ardour aplica
+	ciertas heurísticas para estimar su tempo en pulsos por minuto (BPM).
+	A menos que los metadatos del archivo de origen proporcionen esta
+	información,
+	<a href="https://github.com/breakfastquay/minibpm">minibpm</a> se utiliza
+	para analizar y detectar los BPM del archivo.
 </p>
 
 <p>
-	After tempo is estimated, the clip is time-stretched to match the
-	session's tempo map. This means that should session's tempo change over
-	time (in either ramped or constant mode), all audio clips will be
-	re-stretched to accommodate for that.
+	Una vez estimado el tempo, el clip se estira temporalmente para ajustarse
+	al mapa de tempo de la sesión. Esto significa que, si el tempo de la
+	sesión cambia a lo largo del tiempo (ya sea de forma progresiva o
+	constante), todos los clips de audio se volverán a estirar para
+	adaptarse a esos cambios.
 </p>
 
 <p>
-	Disabling stretching when original clip's tempo doesn't match that of the
-	session will most of the times make the clip audibly go out of sync with
-	the beat.
+	Desactivar el estiramiento cuando el tempo original del clip no coincide
+	con el de la sesión hará que, en la mayoría de los casos, el clip se
+	desincronice audiblemente del pulso.
 </p>
 
-<h2>Stretch modes</h2>
+<h2>Modos de estiramiento</h2>
 
 <p>
-	Once stretching is enabled, there are several options how to apply it:
+	Una vez que el estiramiento está habilitado, existen varias opciones para
+	aplicarlo:
 </p>
 
 <ul>
-  <li><dfn>Crisp</dfn> works best for sounds with fast onset like drums and percussion</li>
-  <li><dfn>Smooth</dfn> is best used for sustained notes like pads</li>
-  <li><dfn>Mixed</dfn> is for anything in between</li>
+	<li><dfn>Nítido</dfn> funciona mejor para sonidos con ataques rápidos, como baterías y percusión</li>
+	<li><dfn>Suave</dfn> se utiliza mejor para notas sostenidas, como pads</li>
+	<li><dfn>Mixto</dfn> es para cualquier caso intermedio</li>
 </ul>
 
 <h2>BPM</h2>
 
 <p>
-	This is where the estimated tempo is displayed. It can also
-	be progressively divided or multiplied by two.
+	Aquí se muestra el tempo estimado. También puede dividirse o multiplicarse
+	progresivamente por dos.
 </p>
 
 <p>
-	Supposing session's tempo is currently 120bpm and original clip's tempo
-	is 90bpm, stretching the clip to match session's tempo will make it sound
-	faster that it originally is.
+	Suponiendo que el tempo de la sesión sea actualmente de 120 bpm y el
+	tempo original del clip sea de 90 bpm, estirar el clip para que
+	coincida con el tempo de la sesión hará que suene más rápido de lo que
+	sonaba originalmente.
 </p>
+
 
 <p>
-	If the estimated clip's tempo is divided by 2, stretching the resulted
-	45bpm back to 120bpm will make the clip sound faster. Vice versa,
-	multiplying the original clip's tempo by 2 and then stretching it down
-	from 180bpm to 120bpm will make the clip sound slower than it originally is.
-</p>
+	Si el tempo estimado del clip se divide por 2, estirar el resultado
+	de 45 bpm de vuelta a 120 bpm hará que el clip suene más rápido.
+	A la inversa, multiplicar por 2 el tempo original del clip y luego
+	estirarlo hacia abajo de 180 bpm a 120 bpm hará que el clip
+	suene más lento de lo que sonaba originalm
 
-<h2>Clip Length</h2>
-
-<p>
-	This control allows adjusting the estimated tempo in a finer manner,
-	by changing the amount of beats it takes to play the clip in the selected
-	trigger slot. The change is immediately displayed in the BPM field above.
-</p>
-
-<h2>Length in Bars</h2>
+<h2>Duración del clip</h2>
 
 <p>
-	This is an estimate of the clip's length as measured in bars for two
-	popular time signatures: 4/4 and 3/4.
+	Este control permite ajustar el tempo estimado de forma más precisa,
+	cambiando la cantidad de pulsos necesarios para reproducir el clip en la
+	ranura de activación seleccionada. El cambio se muestra de inmediato en el
+	campo de BPM de arriba.
 </p>
+
+<h2>Duración en compases</h2>
+
+<p>
+	Esto es una estimación de la duración del clip medida en compases para dos
+	compases populares: 4/4 y 3/4.
+</p>
+

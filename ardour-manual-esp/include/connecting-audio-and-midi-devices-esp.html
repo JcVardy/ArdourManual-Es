@@ -1,32 +1,52 @@
 
 <p>
-  Normally Ardour does not care about how audio and MIDI gets into the computer&mdash;it pretty much deals only with its own inputs and outputs; it is up to the user to ensure that all external routing is sound. After all, Ardour has no way to know how signals from the outside world get to it. However, there are some things that Ardour can do to help troubleshoot problems with audio and MIDI connections&mdash;at least on the computer side.
+  Normalmente, a Ardour no le importa cómo llegan el audio y el MIDI al
+  ordenador: en la práctica, solo se ocupa de sus propias entradas y salidas.
+  Es responsabilidad del usuario asegurarse de que todo el ruteo externo sea
+  correcto. Al fin y al cabo, Ardour no tiene forma de saber cómo le llegan las
+  señales desde el mundo exterior. No obstante, hay algunas cosas que Ardour
+  puede hacer para ayudar a localizar problemas con las conexiones de audio y
+  MIDI, al menos del lado del ordenador.
 </p>
 
 <p>
-  For example, a typical setup might include a microphone that feeds a mixer that then feeds the computer. A failure can occur anywhere in that signal chain, including the cables that connect everything together. As far as Ardour is concerned, the most important connection is the one coming from the sound source to the physical audio input of the computer&mdash;in this example, the cable connecting between the mixer and the computer.
+  Por ejemplo, una configuración típica puede incluir un micrófono que
+  alimenta una mezcladora (mixer), que a su vez alimenta el ordenador. Una falla puede
+  producirse en cualquier punto de esa cadena de señal, incluidos los cables
+  que conectan todos los elementos. Desde el punto de vista de Ardour, la
+  conexión más importante es la que va desde la fuente de sonido hasta la
+  entrada de audio física del ordenador; en este ejemplo, el cable que conecta
+  la mezcladora con el ordenador.
 </p>
 
 <p>
-  Common sense and basic troubleshooting skills are needed when problems arise, and in the above example, one would have to go through the entire signal chain to ensure that each component was working as it should.
+  Cuando surgen problemas, se requiere sentido común y habilidades básicas de
+  diagnóstico, y en el ejemplo anterior habría que revisar toda la cadena de
+  señal para asegurarse de que cada componente funcione como corresponde.
 </p>
 
 <p>
-  For some cases, Ardour eliminates possible I/O issues. One such case is
-  automatically saving I/O per device to sessions and restoring connections
-  when switching the backend, e.g. from ALSA to PulseAudio and vice versa.
+  En algunos casos, Ardour elimina posibles problemas de E/S (Entradas/Salidas, o "Inputs/Outputs"). Uno de estos
+  casos es el guardado automático de la E/S por dispositivo en las sesiones y
+  la restauración de las conexiones al cambiar el motor de fondo, por ejemplo,
+  de ALSA a PulseAudio y viceversa.
 </p>
 
 <h2 id="common-problems">Common Problems</h2>
 
+<h2 id="common-problems">Problemas comunes</h2>
+
 <p>
-  Ardour tries to set things up in a sane manner by automatically connecting the hardware inputs of the computer to its master input and the hardware outputs to the master output. If the signal coming into the hardware inputs is active, the meters on Ardour's master channel should move. If they don't, some things to check include:
+  Ardour intenta configurar todo de forma razonable conectando automáticamente
+  las entradas de hardware del ordenador a su entrada maestra (Master input) y las salidas de
+  hardware a la salida maestra (Master output). Si la señal que entra por las entradas de
+  hardware está activa, los medidores del canal maestro (Master channel) de Ardour deberían
+  moverse. Si no lo hacen, algunas cosas a comprobar incluyen:
 </p>
-
 <ul>
-  <li>Making sure there is actually an input signal</li>
-  <li>Making sure the input signal is getting into the computer</li>
-  <li>Making sure that Ardour is talking to the correct sound card</li>
-  <li>Making sure that the sound card in use by Ardour is working properly</li>
+  <li>Asegurarse de que realmente haya una señal de entrada</li>
+  <li>Asegurarse de que la señal de entrada esté llegando al ordenador</li>
+  <li>Asegurarse de que Ardour esté usando la tarjeta de sonido correcta</li>
+  <li>Asegurarse de que la tarjeta de sonido que usa Ardour funcione
+    correctamente</li>
 </ul>
-
