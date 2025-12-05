@@ -6,3 +6,7 @@ Este documento albergará criterios ahunados sobre la traducción de Ardour al e
 - Definir términos para las "pistas de Audio" y las "pistas de Automatización". En inglés se usan "Tracks" y "Lanes". Para automatización podría utilizarse "carriles".
 - trigger slot - Ranura de activación.
 - Cues se traduce como "Entradas".
+- "Mixer strips" --> Tiras de la mezcladora
+- "Pan", "Panning", etc ---> Existe panorámica, panoramización, pero la gente usa Paneo de forma má habitual y es la que preferimos.
+- Para "Mute" usamos Mudo cuando es la función en sí, como suele estar en la interfaz gráfica.
+ Pero si describimos la forma en la que actúa, silencio y sus derivados están permitidos.

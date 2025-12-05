@@ -1,274 +1,310 @@
 
 <figure>
-  <img src="/images/push2-main.jpg" alt="The Ableton Push 2 surface">
+  <img src="/images/push2-main.jpg" alt="La superficie Ableton Push 2">
   <figcaption>
-    The Ableton Push 2 surface
+    La superficie de control Ableton Push 2
   </figcaption>
 </figure>
 
 <p>
-  Since version 5.4, Ardour has had extensive support for the Ableton
-  Push2. This is an expensive but beautifully engineered control
-  surface primarily targeting the workflow found in Ableton's Live
-  software and other similar tools such as Bitwig. As of version 5.4,
-  Ardour does not offer the same kind of workflow, so we have designed
-  our support for the Push 2 around mixing and editing and musical
-  performance, without the clip/scene oriented approach in Live. This
-  may change in future versions of Ardour.
+  Desde la versión 5.4, Ardour ofrece un soporte amplio para el controlador Ableton
+  Push 2. Se trata de una superficie de control costosa, pero bellamente
+  diseñada, orientada principalmente al flujo de trabajo presente en el
+  software Ableton Live y en otras herramientas similares como Bitwig.
+  A partir de la versión 5.4, Ardour no ofrece ese mismo tipo de flujo de
+  trabajo, por lo que hemos diseñado el soporte para el Push 2 centrado
+  en la mezcla, la edición y la interpretación musical, sin el enfoque
+  orientado a clips y escenas de Live. Esto podría cambiar en futuras
+  versiones de Ardour.
 </p>
 
-<h2>Connecting the Push 2</h2>
+
+<h2>Conectando el Push 2</h2>
 <p>
-  Plug the USB cable from the Push 2 into a USB2 or USB3 port on your
-  computer. For brighter backlighting, also plug in the power supply
-  (this is not necessary for use).
+  Conecta el cable USB del Push 2 a un puerto USB 2 o USB 3 de tu
+  computadora. Para una retroiluminación más intensa, conecta también
+  la fuente de alimentación (esto no es necesario para su uso).
 </p>
 <p>
-  The Push 2 will be automatically recognized by your operating
-  system, and will appear in any of the lists of possible MIDI ports
-  in both Ardour and other similar software.
+  El Push 2 será reconocido automáticamente por tu sistema operativo
+  y aparecerá en cualquiera de las listas de puertos MIDI disponibles,
+  tanto en Ardour como en otros programas similares.
 </p>
 <div class="note">
   <p>
-    Linux does not provide normal users access to arbitrary USB
-    devices by default (this is a security measure). To give yourself
-    access to the Push2, you need to create a file in
-    the <code>/etc/udev/rules.d</code> folder (directory). The name of
-    the should be something like "50-Ableton-Push2.rules" (the only
-    critical parts are that it ends in ".rules" and is unique). The
-    file should contain the following single line:
+    Linux no proporciona a los usuarios normales acceso a dispositivos USB
+    arbitrarios de forma predeterminada (esto es una medida de seguridad).
+    Para otorgarte acceso al Push 2, debes crear un archivo en el directorio
+    <code>/etc/udev/rules.d</code>. El nombre del archivo puede ser algo como
+    <q>50-Ableton-Push2.rules</q> (lo único crítico es que termine en
+    <q>.rules</q> y que sea único). El archivo debe contener la siguiente
+    línea única:
   </p>
   <p>
-  <verb>
-    SUBSYSTEM=="usb", ATTR{idVendor}=="2982", ATTR{idProduct}=="1967", MODE="0666", GROUP="audio"
-  </verb>
+    <verb>
+      SUBSYSTEM=="usb", ATTR{idVendor}=="2982", ATTR{idProduct}=="1967", MODE="0666", GROUP="audio"
+    </verb>
   </p>
   <p>
-  Note that you will need to be member of the group named in the
-  "GROUP" property ("audio" in the example above). 
+    Ten en cuenta que debes ser miembro del grupo especificado en la
+    propiedad <q>GROUP</q> (<q>audio</q> en el ejemplo anterior).
   </p>
 </div>
 
+
 <p>
-  Normally, Ardour should be able to automatically detect a connected Push 2
-  device. If it fails, open the Preferences dialog, and then click on "Control
-  Surfaces". Click on the "Enable" button in the line that says "Ableton
-  Push 2" in order to activate Ardour's Push 2 support.
+  Normalmente, Ardour debería poder detectar automáticamente un dispositivo
+  Push 2 conectado. Si esto no ocurre, abre el diálogo de Preferencias y
+  luego haz clic en <q>Superficies de control</q>. Pulsa el botón
+  <q>Habilitar</q> en la fila que dice <q>Ableton Push 2</q> para activar
+  el soporte de Push 2 en Ardour.
 </p>
 <p>
-  Once you select the input and output port, Ardour will initialize
-  the Push 2 and it will be ready to use. You only need do this
-  once: once these ports are connected and your session has been
-  saved, the connections will be made automatically in this and other
-  future sessions.
+  Una vez que selecciones los puertos de entrada y salida, Ardour
+  inicializará el Push 2 y quedará listo para su uso. Solo necesitas
+  hacer esto una vez: una vez que estos puertos estén conectados y la
+  sesión se haya guardado, las conexiones se realizarán automáticamente
+  en esta y en futuras sesiones.
 </p>
 
-<h2>Push 2 Configuration</h2>
+<h2>Configuración del Push 2</h2>
 <p>
-  The only configuration option at this time is whether the pads send
-  aftertouch or polyphonic pressure messages. You can alter this
-  setting via the Push 2 GUI, accessed by double-clicking on the "Push
-  2" entry in the control surfaces list.
-</p>
-
-<figure>
-  <img src="/images/push2-gui.png" alt="The Push 2 configuration dialog">
-  <figcaption>
-    The Push 2 configuration dialog
-  </figcaption>
-</figure>
-
-<h2>Basic Concepts</h2>
-<p>
-  With the Push 2 support in Ardour 5.4, you can do the following
-  things:
-  <table class="dl">
-    <tr><th>Perform using the 8 x 8 pad "grid"</th>
-    <td>The Push 2 has really lovely pressure-sensitive pads that can
-    also generate either aftertouch or note (polyphonic) pressure.</td></tr>
-    <tr><th>Global Mixing</th>
-    <td>See many tracks at once, and control numerous parameters for each.</td></tr>
-    <tr><th>Track/Bus Mixing</th>
-    <td>View a single track/bus, with even more parameters for the track.</td></tr>
-    <tr><th>Choose the mode/scale, root note and more for the pads</th>
-    <td>37 scales are available. Like Live, Ardour offers both
-    "in-key" and "chromatic" pad layouts.</td></tr>
-  </table>
-
-  &hellip; plus a variety of tasks related to transport control, selection,
-  import, click track control and more.
-</p>
-
-<h2>Musical Performance</h2>
-<p>
-  Messages sent from the 8x8 pad grid and the "pitch bend bar" are
-  routed to a special MIDI port within Ardour called "Push 2 Pads"
-  (no extra latency is incurred from this routing). Although you can
-  manually connect this port to whatever you wish, the normal
-  behaviour of Ardour's Push 2 support is to connect the pads to the
-  most recently selected MIDI track.
-</p>
-<p>
-  This means that to play a soft-synth/instrument plugin in a given
-  MIDI track with the Push 2, you just need to select that track.
-</p>
-<p>
-  If multiple MIDI tracks are selected at once, the first selected
-  track will be used. Note that messages originating from all other
-  controls on the Push 2 will <em>not</em> not be delivered to the
-  "Push 2 Pads" port. This makes no difference in practice, because
-  the other controls do not send messages that are useful for musical
-  performance.
-</p>
-
-<h2>Global Mix</h2>
-<p>
-  This is the default mode that Ardour will start the Push 2 in. In
-  this mode, the 8 knobs at the top of the device, the 8 buttons below
-  them, the video display and the 8 buttons below that are combined to
-  provide a global view of the session mix.
+  La única opción de configuración disponible por el momento es si los pads (almohadillas)
+  envían mensajes de aftertouch o de presión polifónica. Puedes modificar
+  este ajuste mediante la interfaz gráfica del Push 2, a la que se accede
+  haciendo doble clic en la entrada <q>Push 2</q> de la lista de superficies
+  de control.
 </p>
 
 <figure>
-  <img src="/images/push2-globalmix.png" alt="Global mix mode on Push2 screen">
+  <img src="/images/push2-gui.png" alt="El cuadro de diálogo de configuración del Push 2">
   <figcaption>
-    Global mix mode on Push2 screen
+    El cuadro de diálogo de configuración del Push 2
+  </figcaption>
+</figure>
+
+
+<h2>Conceptos básicos</h2>
+<p>
+  Con la compatibilidad del Push 2 en Ardour 5.4, puedes hacer lo siguiente:
+<table class="dl">
+  <tr><th>Interpretar usando la “rejilla” de pads 8 × 8</th>
+    <td>El Push 2 cuenta con pads sensibles a la presión de muy alta calidad, que también pueden generar mensajes de aftertouch o de presión por nota (polifónica).</td></tr>
+
+  <tr><th>Mezcla global</th>
+    <td>Ver muchas pistas a la vez y controlar numerosos parámetros de cada una.</td></tr>
+
+  <tr><th>Mezcla de pista/bus</th>
+    <td>Ver una única pista o bus, con aún más parámetros disponibles para esa pista.</td></tr>
+
+  <tr><th>Elegir el modo/escala, la nota tónica (o raíz) y más para los pads</th>
+    <td>Hay 37 escalas disponibles. Al igual que Live, Ardour ofrece distribuciones de pads “en tonalidad” y “cromáticas”.</td></tr>
+</table>
+
+&hellip; además de una variedad de tareas relacionadas con el control de transporte,
+la selección, la importación, el control del metrónomo y mucho más.
+</p>
+
+
+<h2>Interpretación musical</h2>
+<p>
+  Los mensajes enviados desde la rejilla de pads 8×8 y la “barra de pitch bend”
+  se enrutan a un puerto MIDI especial dentro de Ardour llamado
+  «Push 2 Pads» (este enrutamiento no introduce latencia adicional).
+  Aunque puedes conectar manualmente este puerto a lo que desees,
+  el comportamiento normal de la compatibilidad de Ardour con el Push 2
+  es conectar los pads a la pista MIDI seleccionada más recientemente.
+</p>
+<p>
+  Esto significa que, para tocar un sintetizador software o un plugin
+  de instrumento en una pista MIDI determinada con el Push 2,
+  basta con seleccionar esa pista.
+</p>
+<p>
+  Si hay varias pistas MIDI seleccionadas a la vez,
+  se utilizará la primera pista seleccionada.
+  Ten en cuenta que los mensajes que se originan en todos los demás
+  controles del Push 2 <em>no</em> se enviarán al puerto
+  «Push 2 Pads». En la práctica esto no supone ninguna diferencia,
+  ya que los demás controles no envían mensajes útiles para la
+  interpretación musical.
+</p>
+
+
+<h2>Mezcla global</h2>
+<p>
+  Este es el modo predeterminado con el que Ardour inicia el Push 2.
+  En este modo, los 8 potenciómetros situados en la parte superior
+  del dispositivo, los 8 botones debajo de ellos, la pantalla y los
+  8 botones situados bajo esta se combinan para ofrecer una vista
+  global de la mezcla de la sesión.
+</p>
+
+<figure>
+  <img src="/images/push2-globalmix.png" alt="Modo de mezcla global en la pantalla del Push 2">
+  <figcaption>
+    Modo de mezcla global en la pantalla del Push 2
   </figcaption>
 </figure>
 
 <p>
-  The upper buttons are labelled by text in the video display just
-  below them. Pressing one of the buttons changes the function of the
-  knobs, and the parameters that will shown for each track/bus in the
-  display.
+  Los botones superiores están rotulados mediante texto que aparece
+  en la pantalla justo debajo de ellos. Al pulsar uno de estos botones
+  se cambia la función de los potenciómetros y los parámetros que se
+  mostrarán para cada pista o bus en la pantalla.
 </p>
+
 <p>
-  As of Ardour 5.4, the possible parameters are:
-  <table class="dl">
-    <tr><th>Volumes</th>
-    <td>The display shows a knob and text displaying
-      the current gain setting for the track, and a meter that
-      corresponds precisely to the meter shown in the Ardour GUI for
-      that track. Changing the meter type (e.g. from Peak to K12) in the
-      GUI will also change it in the Push 2 display. The physical knob
-      will alter track/bus gain.
+  A partir de Ardour 5.4, los parámetros disponibles son:
+<table class="dl">
+  <tr><th>Volúmenes</th>
+    <td>
+      La pantalla muestra un potenciómetro y texto que indica
+      el ajuste de ganancia actual de la pista, además de un medidor
+      que corresponde de forma precisa al medidor que se muestra en la
+      interfaz gráfica de Ardour para esa pista. Cambiar el tipo de
+      medidor (por ejemplo, de Pico (Peak) a K12) en la interfaz gráfica
+      también lo cambiará en la pantalla del Push 2. El potenciómetro
+      físico modificará la ganancia de la pista o bus.
     </td></tr>
-    <tr><th>Pans</th>
-    <td>The display shows a knob indicating the pan direction/azimuth
-    for the corresponding track/bus. Turning the physical knob will
-    pan the track left and right. If the track/bus has no panner
-    (i.e. it has only a single output), no knob is shown and the
-    physical knob will do nothing. </td></tr>
-    <tr><th>Pan Widths</th>
-    <td><p>For tracks with 2 outputs, the display will show a knob
-	indicating the pan width setting for the corresponding
-	track/bus. The physical knob can be turned to adjust the
-	width.
-      </p>
+  <tr><th>Paneos</th>
+    <td>
+      La pantalla muestra un potenciómetro que indica la dirección o
+      el ángulo de paneo del bus o pista correspondiente.
+      Girar el potenciómetro físico panea la pista hacia la
+      izquierda o la derecha. Si la pista o bus no tiene opción de paneo
+      (es decir, solo tiene una salida), no se mostrará ningún
+      potenciómetro y el potenciómetro físico no tendrá efecto.
+    </td></tr>
+  <tr><th>Anchos de paneo</th>
+    <td>
       <p>
-	Unlike many DAWs, Ardour's stereo panners have "width"
-	parameter that defaults to 100%. You cannot change the pan
-	direction/azimuth of a track with 100% width, but must first
-	reduce the width in order to pan it. Similarly, a track panned
-	anywhere other than dead center has limits on the maximum
-	width setting. If these concepts are not familiar to you,
-	please be aware than many DAWs use a "panner" that actually
-	implement "balance" and not "panning", hence the difference.
+        En las pistas con 2 salidas, la pantalla mostrará un
+        potenciómetro que indica el ajuste del ancho del paneo del
+        bus o pista correspondiente. El potenciómetro físico puede
+        girarse para ajustar dicho ancho.
       </p>
     </td></tr>
-    <tr><th>A Sends</th>
-    <td>The display shows a knob indicating the gain level for the
-      first send in that track. If the track has no send, no knob will
-      be shown, and the physical knob for that track will do nothing.
+
+  <p>
+    A diferencia de muchos DAW, los paneos estéreo de Ardour
+    tienen un parámetro de «ancho» que por defecto es del 100 %.
+    No es posible cambiar la dirección o el ángulo de paneo
+    de una pista con un ancho del 100 %; primero es necesario reducir
+    el ancho para poder panearla. De forma similar, una pista
+    paneada en cualquier posición distinta del centro exacto
+    tiene límites en el valor máximo de ancho que puede usarse.
+    Si estos conceptos no te resultan familiares, ten en cuenta
+    que muchos DAW utilizan un «paneador» que en realidad
+    implementa un control de «balance» y no un verdadero
+    paneo, de ahí la diferencia.
+  </p>
+  </td></tr>
+  <tr><th>Envíos A</th>
+    <td>
+      La pantalla muestra un potenciómetro que indica el nivel de
+      ganancia del primer envío de esa pista. Si la pista no tiene
+      ningún envío, no se mostrará ningún potenciómetro y el
+      potenciómetro físico correspondiente no tendrá efecto.
     </td></tr>
-    <tr><th>B Sends, C Sends, D Sends</th>
-    <td>Like "A Sends", but for the 2nd, 3rd and 4th sends of a
-      track/bus respectively.
+  <tr><th>Envíos B, Envíos C, Envíos D</th>
+    <td>
+      Igual que «Envíos A», pero para el segundo, tercer y cuarto
+      envío de la pista o bus, respectivamente.
     </td></tr>
-  </table>
-</p>
-<p>
-  To change which tracks are shown while in global mix mode, use the
-  left and right arrow/cursor keys just below and to the right of the
-  display. Tracks and busses that are hidden in Ardour's GUI will also
-  be hidden from display on the Push 2.
-</p>
-<p>
-  To select a track/bus directly from the Push 2, press the
-  corresponding button below the display. The track name will be
-  highlighted, and the selection will change in Ardour's GUI as well
-  (and also any other control surfaces).
-</p>
-
-<h3>Soloing and Muting in Global Mix mode</h3>
-<p>
-  The Solo and Mute buttons to the left of the video display can be
-  used to solo and mute tracks while in Global Mix mode. The operation
-  will be applied to the <em>first</em> currently selected
-  track(s).
-</p>
-<p>
-  There are two indications that one or more tracks are soloed:
-  <ol>
-    <li>The solo button will blink red</li>
-    <li>Track names will be prefixed by "*" if they are soloed, and
-      "-" if they are muted due to soloing.</li>
-  </ol>
-</p>
-<p>
-  To cancel solo, either:
-  <ul>
-    <li>Select the soloed track(s) and press the solo button
-      again</li>
-    <li>Press and hold the solo button for more than 1 second</li>
-  </ul>
-</p>
-
-<h2>Track Mix</h2>
-<p>Track Mix mode allows you to focus on a single track in more detail
-  than is possible in Global Mix mode. To enter (or leave) Track Mix
-  mode, press the "Mix" button.
-</p>
-<p>
+</table>
 
 </p>
 <p>
-  In Track Mix mode, various aspects of the state of the first
-  selected track/bus will be displayed on the Push 2. Above the
-  display, the first 4 knobs control track volume (gain), pan
-  directiom/azimuth, pan width, and where appropriate, track input
-  trim.
+  Para cambiar qué pistas se muestran en el modo de mezcla global,
+  utiliza las teclas de flecha izquierda y derecha situadas justo
+  debajo y a la derecha de la pantalla. Las pistas y buses que estén
+  ocultos en la interfaz gráfica de Ardour también se ocultarán en la
+  pantalla del Push 2.
 </p>
 <p>
-  Below the display, 7 buttons provide immediate control of mute,
-  solo, rec-enable, monitoring (input or disk or automatic), solo
-  isolate and solo safe state. When a a track is muted due to other
-  track(s) soloing, the mute button will flash (to differentiate from
-  its state when it is explicitly muted).
-</p>
-<p>
-  The video display also shows meters for the track, which as in
-  Global Mix mode, precisely match the meter type shown in Ardour's
-  GUI. There are also two time displays showing the current playhead
-  position in both musical (beats|bars|ticks) format, and as
-  hours:minutes:seconds.
-</p>
-<p>
-  To change which track is visible in Track Mix mode, use the
-  left/right arrow/cursor keys just below and to the right of the
-  video display.
+  Para seleccionar una pista o bus directamente desde el Push 2,
+  pulsa el botón correspondiente debajo de la pantalla. El nombre de
+  la pista se resaltará y la selección también cambiará en la
+  interfaz gráfica de Ardour (y en cualquier otra superficie de
+  control).
 </p>
 
-<h2>Scale Selection</h2>
+<h3>Solo y Mudo en el modo de mezcla global</h3>
 <p>
-  Press the Scale button to enter Scale mode. The display will look
-  like this:
+  Los botones de <em>Solo</em> y <em>Mudo</em> situados a la
+  izquierda de la pantalla de vídeo pueden usarse para poner en solo
+  o silenciar pistas mientras se está en el modo de mezcla global.
+  La operación se aplicará a la <em>primera</em> pista o conjunto de
+  pistas seleccionadas en ese momento.
+</p>
+
+<p>
+  Hay dos indicaciones de que una o más pistas están en solo:
+<ol>
+  <li>El botón de solo parpadeará en rojo</li>
+  <li>Los nombres de las pistas irán precedidos por “*” si están en solo,
+    y por “-” si están silenciadas como consecuencia del solo.</li>
+</ol>
+</p>
+<p>
+  Para cancelar el solo:
+<ul>
+  <li>Selecciona la(s) pista(s) en solo y vuelve a pulsar el botón de solo</li>
+  <li>Mantén pulsado el botón de solo durante más de 1 segundo</li>
+</ul>
+</p>
+<h2>Mezcla de pista</h2>
+
+<p>
+  El modo Mezcla de pista permite centrarse en una sola pista con mucho más
+  detalle del que es posible en el modo Mezcla global. Para entrar (o salir)
+  del modo Mezcla de pista, pulsa el botón <kbd class="menu">Mezcla</kbd> (Mix).
+</p>
+
+<p>
+  En el modo Mezcla de pista, en el Push 2 se muestran diversos aspectos del
+  estado de la primera pista o bus seleccionados. Por encima de la pantalla,
+  los primeros 4 encoders (controles por rotación) controlan el volumen de la pista (ganancia), la
+  dirección/azimut del paneo, el ancho de paneo y, cuando corresponde, el
+  recorte de entrada de la pista.
+</p>
+
+<p>
+  Por debajo de la pantalla, 7 botones proporcionan control inmediato sobre
+  mudo (mute), solo, habilitar grabación, monitoreo (entrada, disco o
+  automático), aislamiento de solo y estado de solo seguro. Cuando una pista
+  está silenciada debido a que otra(s) pista(s) están en solo, el botón de
+  mute parpadeará (para diferenciarlo de cuando la pista está silenciada de
+  forma explícita).
+</p>
+
+<p>
+  La pantalla también muestra medidores para la pista que, al igual que en
+  el modo Mezcla global, coinciden con total precisión con el tipo de medidor
+  que se muestra en la interfaz gráfica de Ardour. También hay dos
+  visualizaciones de tiempo que muestran la posición actual del cabezal de
+  reproducción tanto en formato musical (compases|tiempos|tics) como en
+  horas:minutos:segundos.
+</p>
+
+<p>
+  Para cambiar qué pista es visible en el modo Mezcla de pista, utiliza las
+  teclas de flecha izquierda/derecha situadas justo debajo y a la derecha de
+  la pantalla de video.
+</p>
+
+
+<h2>Selección de escala</h2>
+<p>
+  Pulsa el botón <em>Escala</em> (Scale) para entrar en el modo Escala. La pantalla se
+  verá de la siguiente manera:
 </p>
 
 <figure>
-  <img src="/images/push2-scale.png" alt="Track mix mode on Push2 screen">
+  <img src="/images/push2-scale.png" alt="Modo de mezcla de pista en la pantalla del Push 2">
   <figcaption>
-    Track mix mode on Push2 screen
+    Modo de mezcla de pista en la pantalla del Push&nbsp;2
   </figcaption>
 </figure>
 
