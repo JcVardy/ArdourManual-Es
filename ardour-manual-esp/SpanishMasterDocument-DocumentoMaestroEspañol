@@ -10,3 +10,14 @@ Este documento albergará criterios ahunados sobre la traducción de Ardour al e
 - "Pan", "Panning", etc ---> Existe panorámica, panoramización, pero la gente usa Paneo de forma má habitual y es la que preferimos.
 - Para "Mute" usamos Mudo cuando es la función en sí, como suele estar en la interfaz gráfica.
  Pero si describimos la forma en la que actúa, silencio y sus derivados están permitidos.
+- “Lane” fue traducido a “carril”
+- Tooltips y pop-ups -> mensajes emergentes
+- Bouncing -> exportar
+- Trigger slot --> ranura de activación
+- En el manual, "Samples" aparece como samples cuando de trata de algo que utiliza un samplers. Muestras para cuando hablamos de muestras de audio, como en frecuencia de muestreo.
+
+
+TODO/ Para hacer:
+- Verificar que hacer con “Ardour-Monitor-Modes
+- Terminar class reference
+- En audiomidi-mixer-strips-esp verificar el termino “In” de entrada,, y “Out” de salida
